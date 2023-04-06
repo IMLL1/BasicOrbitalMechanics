@@ -1,0 +1,110 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+
+This section focuses on deriving numerous expressions describing orbits, with the goal of ultimately finding geometric relationships between parameters of the orbit.
+
+\bigskip\bigskip
+\subsection{Explicit Orbit Equation}
+
+The first equation found will describe $r$ as a function of $\theta$
+\begin{align*}
+    \frac{1}{r} & =\frac{\mu}{h^2}+C_1\cos(\theta-\omega)           \\
+    r           & =\frac{1}{\frac{\mu}{h^2}+C_1\cos(\theta-\omega)}
+\end{align*}
+\begin{equation}\label{Polar with h, mu, C}
+    r=\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}\cos(\theta-\omega)}
+\end{equation}
+
+Equation \eqref{Polar with h, mu, C} describes a conic section centered at a focus (as will be be proven in Section \ref{sec:Kepler's First Law}), with the major axis being slanted at an angle of $\omega$ (which is called the Argument of Periapsis; see Figure \ref{fig:Wiki Image}). In order for this to describe a \textit{closed} orbit, $-1<\frac{C_1h^2}{\mu}<1$ so that the denominator is never zero or negative.
+
+%\subsubsection{Apoapsis and Periapsis}\label{sec:Ap and Pe Early}
+
+%The orbit equation above can be used to find the highest point in an orbit (apoapsis) and the lowest point (periapsis). The apoapsis can be found by minimizing the denominator, which occurs when $\cos(\theta-\omega)=-1$. The periapsis occurs when $\cos(\theta-\omega)=1$.
+%\begin{align*}
+%    r_\text{ap} & =\frac{\frac{h^2}{\mu}}{1-C_1\frac{h^2}{\mu}} & r_\text{pe} & =\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}
+%\end{align*}
+
+%Note that the apoapsis is only defined for closed orbits.
+
+\subsection{Semi-Major Axis}
+
+The Semi-Major Axis, usually expressed SMA or simply $a$, is half of the length of the major axis. The major axis of the ellipse spans from the closest point to the focus to the furthest point (which can be found by maximizing and minimizing the denominator of Equation \eqref{Polar with h, mu, C} repsectively). The major axis $2a$ is therefore the sum of the two extreme points on on the conic section (see Figure \ref{fig:Orbit Diagram}).
+\begin{align*}
+    2a & =r_\text{min}+r_\text{max}                                                                                                        \\
+       & =\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}+\frac{\frac{h^2}{\mu}}{1-C_1\frac{h^2}{\mu}}                                        \\
+       & =\frac{\frac{h^2}{\mu}(1-C_1\frac{h^2}{\mu})+\frac{h^2}{\mu}(1+C_1\frac{h^2}{\mu})}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})} \\
+       & =\frac{2\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}                                                            \\
+    a  & =\frac{\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}
+\end{align*}
+
+\subsection{Eccentricity}
+
+The eccentricity $e$ of an ellipse is defined as the ratio of the distance from the foci to the center and the semimajor axis (again, see Figure \ref{fig:Orbit Diagram}).
+\begin{align*}
+    e & =\frac{\text{Focus Distance from Center}}{a}                                                                                                                                                    \\
+      & =\frac{a-r_\text{min}}{a}                                                                                                                                                                       \\
+      & =\frac{\frac{\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}-\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}}{\frac{\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}} \\
+      & =\frac{\frac{h^2}{\mu}-\frac{h^2}{\mu}(1-C_1\frac{h^2}{\mu})}{\frac{h^2}{\mu}}                                                                                                                  \\
+      & =C_1\frac{h^2}{\mu}                                                                                                                                                                             \\ \\
+\end{align*}
+
+This allows the orbit equation Equation \eqref{Polar with h, mu, C} to be redefined to
+\begin{equation}\label{Polar with h, mu, e}
+    r=\frac{\frac{h^2}{\mu}}{1+e\cos(\theta-\omega)}
+\end{equation}
+
+\subsection{Semi-Latus Rectum}
+
+In an ellipse, the semi-latus rectum $p$ is defined as the perpendicular distance between the focus and the ellipse (see Figure \ref{fig:Orbit Diagram}). In other words, it is half of the width of the ellipse at the focus. Because Equation \eqref{Polar with h, mu, e} has the focus at the origin, the semi-latus rectum occurs when $\theta$ is 90 degrees (or $\frac{\pi}{2}$ radians) offset from the apses. The semi-latus rectum can therefore be found by simply evaluating Equation \eqref{Polar with h, mu, e} at that point.
+\begin{align*}
+    p & =\frac{\frac{h^2}{\mu}}{1+e\cos(90^\circ)} \\
+      & =\frac{\frac{h^2}{\mu}}{1+e(0)}            \\
+      & = \frac{h^2}{\mu}
+\end{align*}
+
+Note that this expression for the semi-latus rectum follows only from physical inputs (the gravitational parameter and the angular momentum).
+\begin{equation}\label{SLR h and mu}
+    p=\frac{h^2}{\mu}
+\end{equation}
+
+Which allows Equation \eqref{Polar with h, mu, e} to transform to
+\begin{equation}\label{Polar with p, e}
+    r=\frac{p}{1+e\cos(\theta-\omega)}
+\end{equation}
+
+However, the semi-latus rectum term is still unideal; the objective is to express everything in terms of $a$ and $e$. Recall the logic behind apoapsis and periapsis radii: the apoapsis occurs when the denominator is minimized, while the periapsis occurs when it is maximized. Applying this to Equation \eqref{Polar with p, e}:
+\begin{align*}
+    r_\text{ap}      & =\frac{p}{1-e} & \frac{p}{1+e} & =r_\text{pe}      \\
+    r_\text{ap}(1-e) & =p             & p             & =r_\text{pe}(1+e) \\
+\end{align*}
+
+Setting these two equations equal to eachother, we get
+$$r_\text{ap}(1-e)=r_\text{pe}(1+e)$$
+
+From Figure \ref{fig:Orbit Diagram}, $r_\text{ap}+r_\text{pe}=2a$, meaning that $r_\text{pe}=2a-r_\text{ap}$
+\begin{align*}
+    r_\text{ap}(1-e)         & =r_\text{pe}(1+e)                \\
+    r_\text{ap}(1-e)         & =(2a-r_\text{ap})(1+e)           \\
+    r_\text{ap}-er_\text{ap} & =2a-r_\text{ap}+2ae-er_\text{ap} \\
+    2r_\text{ap}             & =2a+2ae                          \\
+    r_\text{ap}              & =a(1+e)                          \\
+    \frac{p}{1-e}            & =a(1+e)                          \\
+    p                        & =a(1+e)(1-e)                     \\
+\end{align*}
+\begin{equation}\label{SLR a and e}
+    p=a(1-e^2)
+\end{equation}
+
+This allows Equation \eqref{Polar with p, e} to be written as
+\begin{equation*}
+    r(\theta)=\frac{a(1-e^2)}{1+e\cos(\theta-\omega)}
+\end{equation*}
+
+The $\omega$ term will be dropped, and this equation describes $r$ with respect the the angle $\theta$ between a satellite and its periapsis.
+\begin{equation}\label{Polar Final}
+    r(\theta)=\frac{a(1-e^2)}{1+e\cos(\theta)}
+\end{equation}
+
+Note that for hyperbolic and parabolic orbits, this equation (as well as the similar equations for $r$ in terms of $\theta$) is only valid for $\frac{-\pi}{2}<\theta<\frac{\pi}{2}$.
+\end{document}
