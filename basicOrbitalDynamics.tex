@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{esvect}
+\usepackage{indentfirst}
+\usepackage{mathtools,leftidx}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings}
+\usepackage{float}
+\usepackage{pgffor}
+\usepackage[pdfencoding=auto, psdextra]{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+}
+\usepackage[a4paper, left=2cm,right=2cm, top=4cm, bottom=4cm]{geometry}
+\usepackage{comment}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+\allowdisplaybreaks
+
+%TODO: UPDATE Auto Build: Run
+
+\title{Fundamentals of Orbital Mechanics}
+\author{Sir Fig Newton and Johannes Momma\\Purdon't University, School of Aeronautics and Astronautics}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+There are many publications that purportedly cover the basics of astrodynamics and orbital mechanics, and many even claim to be catered to an uninitiated audience. However, many of them take for granted some prior knowledge of orbital mechanics, and neglect the ever-important step of ensuring that the reader can follow \textit{every} step of the process. This document intends to rectify this by covering the basics of orbital dynamics, from derivations of orbital motion to complex orbital maneuvers, while ensuring the reader can follow every step. This means algebraic steps are shown, motivations are discussed (where possible) instead of completing procedures seemingly out of the blue, and conclusions are summarized. It is reccomended that the reader view the appendix first, to get a sense for some terminology that is used throughout this document.
+
+\pagebreak
+\tableofcontents
+
+\pagebreak
+\section{Definitions of Motion}\label{Sec:Motion}
+\subfile{sections/motion}
+
+\pagebreak
+\section{Orbit Equation}\label{Sec:Orbit Equation}
+\subfile{sections/orbitEquation}
+
+\pagebreak
+\section{Proofs}\label{sec:Proofs}
+\subfile{sections/proofs}
+
+\pagebreak
+\section{Orbit Geometry}\label{sec:Orbit Geometry}
+\subfile{sections/orbitGeometry}
+
+\pagebreak
+\section{Physical Orbital Parameters from Geometry}\label{sec:Orbital Parameters from Geometry}
+\subfile{sections/physicalFromGeometry}
+
+\pagebreak
+\section{Geometry from Physical Parameters}\label{sec:Geometry from Physical Parameters}
+\subfile{sections/geometryFromPhysical}
+
+\pagebreak
+\section{Analysis of Unbound Trajectories}\label{sec:Special Trajectories}
+\subfile{sections/unboundTrajectories}
+
+\pagebreak
+\section{Orbital Manuevers Basics}\label{sec:Manuevers Basics}
+\subfile{sections/maneuversBasics}
+
+\pagebreak
+\section{Practical Maneuvers}\label{sec:Practical Manuevers}
+\subfile{sections/basicManeuvers}
+
+\pagebreak
+\section{Advanced Maneuvers}\label{sec:Advanced Manuevers}
+\subfile{sections/advancedManeuvers}
+
+\pagebreak
+\section{Appendix}\label{sec:Appendix}
+\subfile{sections/appendix}
+
+\end{document}
