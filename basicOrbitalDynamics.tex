@@ -1,13 +1,13 @@
 \documentclass{article}
+\usepackage{indentfirst}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{cancel}
-\usepackage[dvipsnames]{xcolor}
 \usepackage{esvect}
-\usepackage{indentfirst}
 \usepackage{mathtools,leftidx}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usetikzlibrary{arrows.meta}
@@ -25,10 +25,10 @@
 \usepackage[a4paper, left=2cm,right=2cm, top=4cm, bottom=4cm]{geometry}
 \usepackage{comment}
 
+\newcommand{\st}[2]{{#1}_\text{#2}} % latin subscript
+
 \usepackage{subfiles} % Best loaded last in the preamble
 \allowdisplaybreaks
-
-%TODO: UPDATE Auto Build: Run
 
 \title{Fundamentals of Orbital Mechanics}
 \author{Sir Fig Newton and Johannes Momma\\Purdon't University, School of Aeronautics and Astronautics}
@@ -76,11 +76,11 @@ There are many publications that purportedly cover the basics of astrodynamics a
 \subfile{sections/maneuversBasics}
 
 \pagebreak
-\section{Practical Maneuvers}\label{sec:Practical Manuevers}
+\section{Single-Body Maneuvers}\label{sec:Manuevers}
 \subfile{sections/basicManeuvers}
 
 \pagebreak
-\section{Advanced Maneuvers}\label{sec:Advanced Manuevers}
+\section{Multi-Body Maneuvers}\label{sec:Advanced Manuevers}
 \subfile{sections/advancedManeuvers}
 
 \pagebreak
