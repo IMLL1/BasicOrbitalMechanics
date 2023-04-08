@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
@@ -22,7 +22,7 @@ Equation \eqref{Polar with h, mu, C} describes a conic section centered at a foc
 
 %The orbit equation above can be used to find the highest point in an orbit (apoapsis) and the lowest point (periapsis). The apoapsis can be found by minimizing the denominator, which occurs when $\cos(\theta-\omega)=-1$. The periapsis occurs when $\cos(\theta-\omega)=1$.
 %\begin{align*}
-%    r_\text{ap} & =\frac{\frac{h^2}{\mu}}{1-C_1\frac{h^2}{\mu}} & r_\text{pe} & =\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}
+%    \st{r}{ap} & =\frac{\frac{h^2}{\mu}}{1-C_1\frac{h^2}{\mu}} & \st{r}{pe} & =\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}
 %\end{align*}
 
 %Note that the apoapsis is only defined for closed orbits.
@@ -31,7 +31,7 @@ Equation \eqref{Polar with h, mu, C} describes a conic section centered at a foc
 
 The Semi-Major Axis, usually expressed SMA or simply $a$, is half of the length of the major axis. The major axis of the ellipse spans from the closest point to the focus to the furthest point (which can be found by maximizing and minimizing the denominator of Equation \eqref{Polar with h, mu, C} repsectively). The major axis $2a$ is therefore the sum of the two extreme points on on the conic section (see Figure \ref{fig:Orbit Diagram}).
 \begin{align*}
-    2a & =r_\text{min}+r_\text{max}                                                                                                        \\
+    2a & =\st{r}{min}+\st{r}{max}                                                                                                        \\
        & =\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}+\frac{\frac{h^2}{\mu}}{1-C_1\frac{h^2}{\mu}}                                        \\
        & =\frac{\frac{h^2}{\mu}(1-C_1\frac{h^2}{\mu})+\frac{h^2}{\mu}(1+C_1\frac{h^2}{\mu})}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})} \\
        & =\frac{2\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}                                                            \\
@@ -43,7 +43,7 @@ The Semi-Major Axis, usually expressed SMA or simply $a$, is half of the length 
 The eccentricity $e$ of an ellipse is defined as the ratio of the distance from the foci to the center and the semimajor axis (again, see Figure \ref{fig:Orbit Diagram}).
 \begin{align*}
     e & =\frac{\text{Focus Distance from Center}}{a}                                                                                                                                                    \\
-      & =\frac{a-r_\text{min}}{a}                                                                                                                                                                       \\
+      & =\frac{a-\st{r}{min}}{a}                                                                                                                                                                       \\
       & =\frac{\frac{\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}-\frac{\frac{h^2}{\mu}}{1+C_1\frac{h^2}{\mu}}}{\frac{\frac{h^2}{\mu}}{(1+C_1\frac{h^2}{\mu})(1-C_1\frac{h^2}{\mu})}} \\
       & =\frac{\frac{h^2}{\mu}-\frac{h^2}{\mu}(1-C_1\frac{h^2}{\mu})}{\frac{h^2}{\mu}}                                                                                                                  \\
       & =C_1\frac{h^2}{\mu}                                                                                                                                                                             \\ \\
@@ -75,20 +75,20 @@ Which allows Equation \eqref{Polar with h, mu, e} to transform to
 
 However, the semi-latus rectum term is still unideal; the objective is to express everything in terms of $a$ and $e$. Recall the logic behind apoapsis and periapsis radii: the apoapsis occurs when the denominator is minimized, while the periapsis occurs when it is maximized. Applying this to Equation \eqref{Polar with p, e}:
 \begin{align*}
-    r_\text{ap}      & =\frac{p}{1-e} & \frac{p}{1+e} & =r_\text{pe}      \\
-    r_\text{ap}(1-e) & =p             & p             & =r_\text{pe}(1+e) \\
+    \st{r}{ap}      & =\frac{p}{1-e} & \frac{p}{1+e} & =\st{r}{pe}      \\
+    \st{r}{ap}(1-e) & =p             & p             & =\st{r}{pe}(1+e) \\
 \end{align*}
 
 Setting these two equations equal to eachother, we get
-$$r_\text{ap}(1-e)=r_\text{pe}(1+e)$$
+$$\st{r}{ap}(1-e)=\st{r}{pe}(1+e)$$
 
-From Figure \ref{fig:Orbit Diagram}, $r_\text{ap}+r_\text{pe}=2a$, meaning that $r_\text{pe}=2a-r_\text{ap}$
+From Figure \ref{fig:Orbit Diagram}, $\st{r}{ap}+\st{r}{pe}=2a$, meaning that $\st{r}{pe}=2a-\st{r}{ap}$
 \begin{align*}
-    r_\text{ap}(1-e)         & =r_\text{pe}(1+e)                \\
-    r_\text{ap}(1-e)         & =(2a-r_\text{ap})(1+e)           \\
-    r_\text{ap}-er_\text{ap} & =2a-r_\text{ap}+2ae-er_\text{ap} \\
-    2r_\text{ap}             & =2a+2ae                          \\
-    r_\text{ap}              & =a(1+e)                          \\
+    \st{r}{ap}(1-e)         & =\st{r}{pe}(1+e)                \\
+    \st{r}{ap}(1-e)         & =(2a-\st{r}{ap})(1+e)           \\
+    \st{r}{ap}-e\st{r}{ap} & =2a-\st{r}{ap}+2ae-e\st{r}{ap} \\
+    2\st{r}{ap}             & =2a+2ae                          \\
+    \st{r}{ap}              & =a(1+e)                          \\
     \frac{p}{1-e}            & =a(1+e)                          \\
     p                        & =a(1+e)(1-e)                     \\
 \end{align*}

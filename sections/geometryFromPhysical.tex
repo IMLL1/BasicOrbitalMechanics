@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
@@ -26,7 +26,7 @@ This can be used to prove an interesting relationship
     \varepsilon & = \frac{1}{2}v^2-\frac{\mu}{r}                                     \\
                 & = \frac{1}{2}\left(v^2-\frac{\mu}{2r}\right)                       \\
                 & = \frac{1}{2}\left(v^2-\left(\sqrt{\frac{\mu}{2r}}\right)^2\right) \\
-                & = \frac{1}{2}\left(v^2-v_\text{escape}^2\right)                    \\
+                & = \frac{1}{2}\left(v^2-\st{v}{escape}^2\right)                    \\
 \end{align*}
 
 While this may not be immediately useful, it is nonetheless intriguing.
@@ -46,10 +46,10 @@ If $v$ and $r$ are known, Equation \eqref{Vis-Viva Equation} can be solved for $
     a                  & = \frac{\mu r}{2\mu-rv^2}             \\
 \end{align*}
 
-Note that $\frac{2\mu}{r}-v^2=v_\text{esc}^2-v^2$.
+Note that $\frac{2\mu}{r}-v^2=\st{v}{escape}^2-v^2$.
 
 \begin{equation}\label{SMA in terms of r, v}
-    a=\frac{\mu r}{2\mu-rv^2}=\frac{\mu}{v_\text{esc}^2-v^2}
+    a=\frac{\mu r}{2\mu-rv^2}=\frac{\mu}{\st{v}{escape}^2-v^2}
 \end{equation}
 
 This shows that the semi-major axis of an orbit is inversely proportional to the difference between the squares of escape velocity and current velocity. This also implies that this difference is conserved throughout an orbit.
@@ -81,7 +81,7 @@ An orbit can take one of three shapes. If the velocity is $v<\sqrt{\frac{2\mu}{r
 
 \bigskip
 The semi-major axis $a$ can be found from measured values
-$$a=\frac{\mu r}{2\mu-rv^2}=\frac{\mu}{v_\text{esc}^2-v^2}$$
+$$a=\frac{\mu r}{2\mu-rv^2}=\frac{\mu}{\st{v}{escape}^2-v^2}$$
 
 \bigskip
 The eccentricity is
@@ -96,33 +96,33 @@ The radii of the apses (periapsis and apoapsis) can be found using a combination
 
 Beginning with conservation of momentum,
 \begin{align*}
-    h_\text{aps}             & = h        \\
-    r_\text{aps}v_\text{aps} & =rv_\theta \\
+    \st{h}{aps}             & = h        \\
+    \st{r}{aps}\st{v}{aps} & =rv_\theta \\
 \end{align*}
 \begin{equation}\label{Apses Radius from h}
-    v_\text{aps}=\frac{rv_\theta}{r_\text{aps}}
+    \st{v}{aps}=\frac{rv_\theta}{\st{r}{aps}}
 \end{equation}
 
 Switching now to conservation of energy,
 \begin{align*}
-    \frac{1}{2}v_\text{aps}^2-\frac{\mu}{r_\text{aps}} & =\frac{1}{2}v^2-\frac{\mu}{r}                 \\
-    v_\text{aps}^2                                     & =v^2-\frac{2\mu}{r}+\frac{2\mu}{r_\text{aps}} \\
+    \frac{1}{2}\st{v}{aps}^2-\frac{\mu}{\st{r}{aps}} & =\frac{1}{2}v^2-\frac{\mu}{r}                 \\
+    \st{v}{aps}^2                                     & =v^2-\frac{2\mu}{r}+\frac{2\mu}{\st{r}{aps}} \\
 \end{align*}
 \begin{equation}\label{Apses Velocity from Radius}
-    v_\text{aps}=\sqrt{v^2-\frac{2\mu}{r}+\frac{2\mu}{r_\text{aps}}}
+    \st{v}{aps}=\sqrt{v^2-\frac{2\mu}{r}+\frac{2\mu}{\st{r}{aps}}}
 \end{equation}
 
 Setting \eqref{Apses Velocity from Radius} and \eqref{Apses Radius from h} equal to each other,
 \begin{align*}
-    \frac{rv_\theta}{r_\text{aps}}       & = \sqrt{v^2-\frac{2\mu}{r}+\frac{2\mu}{r_\text{aps}}}                            \\
-    \frac{r^2v_\theta^2}{r_\text{aps}^2} & = v^2-\frac{2\mu}{r}+\frac{2\mu}{r_\text{aps}}                                   \\
-    r^2v_\theta^2                        & = v^2r_\text{aps}^2-\frac{2\mu}{r}r_\text{aps}^2+2\mu{}r_\text{aps}              \\
-    0                                    & = \left(\frac{2\mu}{r}-v^2\right)r_\text{aps}^2-2\mu{}r_\text{aps}+r^2v_\theta^2 \\
+    \frac{rv_\theta}{\st{r}{aps}}       & = \sqrt{v^2-\frac{2\mu}{r}+\frac{2\mu}{\st{r}{aps}}}                            \\
+    \frac{r^2v_\theta^2}{\st{r}{aps}^2} & = v^2-\frac{2\mu}{r}+\frac{2\mu}{\st{r}{aps}}                                   \\
+    r^2v_\theta^2                        & = v^2\st{r}{aps}^2-\frac{2\mu}{r}\st{r}{aps}^2+2\mu{}\st{r}{aps}              \\
+    0                                    & = \left(\frac{2\mu}{r}-v^2\right)\st{r}{aps}^2-2\mu{}\st{r}{aps}+r^2v_\theta^2 \\
 \end{align*}
 
-This equation is quadratic in $r_\text{aps}$ and can be solved
+This equation is quadratic in $\st{r}{aps}$ and can be solved
 \begin{align*}
-    r_\text{aps} & =\frac{2\mu\pm\sqrt{(2\mu)^2-4(\frac{2\mu}{r}-v^2)(r^2v_\theta^2)}}{2(\frac{2\mu}{r}-v^2)} \\
+    \st{r}{aps} & =\frac{2\mu\pm\sqrt{(2\mu)^2-4(\frac{2\mu}{r}-v^2)(r^2v_\theta^2)}}{2(\frac{2\mu}{r}-v^2)} \\
                  & =\frac{2\mu\pm\sqrt{4\mu^2-4(2\mu{}rv_\theta^2-v^2r^2v_\theta^2)}}{2(\frac{2\mu}{r}-v^2)}  \\
                  & =\frac{2\mu\pm2\sqrt{\mu^2-2\mu{}rv_\theta^2+v^2r^2v_\theta^2}}{2(\frac{2\mu}{r}-v^2)}     \\
                  & =\frac{\mu\pm\sqrt{\mu^2-2\mu{}rv_\theta^2+(rvv_\theta)^2}}{\frac{2\mu}{r}-v^2}            \\
@@ -131,11 +131,11 @@ This equation is quadratic in $r_\text{aps}$ and can be solved
 
 The substitution will now be made that $v_\theta=v\cos(\phi)$
 \begin{align*}
-    r_\text{aps} & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-2\mu{}rv^2\cos^2(\phi)+(rvv\cos(\phi))^2}}{2\mu-rv^2}  \\
+    \st{r}{aps} & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-2\mu{}rv^2\cos^2(\phi)+(rvv\cos(\phi))^2}}{2\mu-rv^2}  \\
                  & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-2\mu{}rv^2\cos^2(\phi)+r^2v^4\cos^2(\phi)}}{2\mu-rv^2} \\
 \end{align*}
 \begin{equation}\label{Aspes Quadratic Solution}
-    r_\text{aps}=\frac{\mu{}r\pm{}r\sqrt{\mu^2-rv^2(2\mu-rv^2)\cos^2{\phi}}}{2\mu-rv^2}
+    \st{r}{aps}=\frac{\mu{}r\pm{}r\sqrt{\mu^2-rv^2(2\mu-rv^2)\cos^2{\phi}}}{2\mu-rv^2}
 \end{equation}
 
 A parameter $Q$ will be defined as the square of the ratio between true velocity at any altitude and velocity required for circular orbit at that altitude.
@@ -144,13 +144,13 @@ $$Q=(\frac{v}{\sqrt{\mu/r}})^2=\frac{v^2r}{\mu}$$
 Solved for $v$, $v=\sqrt{Q\frac{\mu}{r}}$
 
 \begin{align*}
-    r_\text{aps} & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-rv^2\cos^2{\phi}(2\mu-rv^2)}}{2\mu-rv^2}                                                                   \\
+    \st{r}{aps} & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-rv^2\cos^2{\phi}(2\mu-rv^2)}}{2\mu-rv^2}                                                                   \\
                  & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-r(\sqrt{Q\frac{\mu}{r}})^2\cos^2{\phi}(2\mu-r(\sqrt{Q\frac{\mu}{r}})^2)}}{2\mu-r(\sqrt{Q\frac{\mu}{r}})^2} \\
                  & =\frac{\mu{}r\pm{}r\sqrt{\mu^2-Q\mu^2\cos^2{\phi}(2-Q)}}{2\mu-Q\mu}                                                                       \\
                  & =\frac{r\pm{}r\sqrt{1-Q(2-Q)\cos^2{\phi}}}{2-Q}                                                                                           \\
 \end{align*}
 \begin{equation}\label{Apses Quadratic Solution with Q}
-    r_\text{aps}=\frac{r\pm{}r\sqrt{1-Q(2-Q)\cos^2{\phi}}}{2-Q}
+    \st{r}{aps}=\frac{r\pm{}r\sqrt{1-Q(2-Q)\cos^2{\phi}}}{2-Q}
 \end{equation}
 
 Equation \eqref{Apses Quadratic Solution with Q} is not in and of itself all that useful, however it allows more exploration of the limitations of Equation \eqref{Aspes Quadratic Solution}.
@@ -165,7 +165,7 @@ In a hyperbolic orbit in which $Q>2$, $Q(2-Q)\cos^2\phi<0$, so $r\sqrt{1-Q(2-Q)\
 
 Equation \eqref{Aspes Quadratic Solution} will be rewritten more concisely as
 \begin{equation}\label{Periapsis and Apoapsis Radii}
-    [r_\text{pe}, r_\text{ap}]=\frac{\mu{}r\mp{}r\sqrt{\mu^2-rv_\theta^2(2\mu{}+rv^2)}}{2\mu-rv^2}
+    [\st{r}{pe}, \st{r}{ap}]=\frac{\mu{}r\mp{}r\sqrt{\mu^2-rv_\theta^2(2\mu{}+rv^2)}}{2\mu-rv^2}
 \end{equation}
 
 Note that this equation's results are only as valid is the data inputted+; if bogus data is thrown in, then the result will be equally meaningless. If $v_\theta$ is measured as greater than $v$, then the solution to this equation will have the entire orbit occuring either above or below the measured altitude. Similarly, the apoapsis height for a hyperbola cannot be used for any meaningful analysis, and should be neglected. Finally, this equation will fail to yield any result at all for perfectly parabolic orbits.
@@ -174,14 +174,14 @@ Note that this equation's results are only as valid is the data inputted+; if bo
 
 The perapsis of a parabolic orbit must be found with different means than that of a hyperbolic or elliptic orbit. Recall from Equation \eqref{Orbit Shape Physical} that in a parabolic orbit, $v=\sqrt\frac{2\mu}{r}$. For angular momentum to be conserved
 \begin{align*}
-    r_\text{pe}v_\text{pe} & =rv_\theta                                         \\
-    r_\text{pe}            & =\frac{rv_\theta}{v_\text{pe}}                     \\
-                           & =\frac{rv_\theta}{\sqrt{\frac{2\mu}{r_\text{pe}}}} \\
-    r_\text{pe}^2          & =\frac{r^2v_\theta^2}{\frac{2\mu}{r_\text{pe}}}    \\
-    r_\text{pe}^2          & =\frac{r_\text{pe}r^2v_\theta^2}{2\mu}             \\
+    \st{r}{pe}\st{v}{pe} & =rv_\theta                                         \\
+    \st{r}{pe}            & =\frac{rv_\theta}{\st{v}{pe}}                     \\
+                           & =\frac{rv_\theta}{\sqrt{\frac{2\mu}{\st{r}{pe}}}} \\
+    \st{r}{pe}^2          & =\frac{r^2v_\theta^2}{\frac{2\mu}{\st{r}{pe}}}    \\
+    \st{r}{pe}^2          & =\frac{\st{r}{pe}r^2v_\theta^2}{2\mu}             \\
 \end{align*}
 \begin{equation}\label{Periapsis Radius Parabola}
-    r_\text{pe,parabola}=\frac{r^2v_\theta^2}{2\mu}
+    \st{r}{pe,parabola}=\frac{r^2v_\theta^2}{2\mu}
 \end{equation}
 
 \bigskip\bigskip
@@ -273,7 +273,7 @@ Until this point, this section has worked purely with physical quantities instea
 
 From Figure \ref{fig:Orbit Diagram}, the major axis is the sum of the apoapsis and periapsis radii. Therefore,
 \begin{align*}
-    2a & = r_\text{pe}+r_\text{ap}                                          \\
+    2a & = \st{r}{pe}+\st{r}{ap}                                          \\
        & =\frac{\mu{}r-{}r\sqrt{\mu^2-rv_\theta^2(2\mu{}+rv^2)}}{2\mu-rv^2} \\
        & +\frac{\mu{}r+{}r\sqrt{\mu^2-rv_\theta^2(2\mu{}+rv^2)}}{2\mu-rv^2} \\
        & =\frac{2\mu{}r}{2\mu-rv^2}                                         \\
@@ -291,9 +291,9 @@ An equivalent form of this equation can be found.
     a & = \frac{\mu{}}{\frac{2\mu}{r}-v^2}
 \end{align*}
 
-Recall from Equation \eqref{Orbit Shape Physical} that escape velocity is $v_\text{esc}=\sqrt{2\mu/r}$
+Recall from Equation \eqref{Orbit Shape Physical} that escape velocity is $\st{v}{escape}=\sqrt{2\mu/r}$
 \begin{align}\label{SMA Physical Escape Velocity}
-    a = \frac{\mu{}}{v_\text{esc}^2-v^2}
+    a = \frac{\mu{}}{\st{v}{escape}^2-v^2}
 \end{align}
 
 This shows that the semi-major axis of an orbit is inversely proportional to the difference between the square of the escape velocity and the current velocity.

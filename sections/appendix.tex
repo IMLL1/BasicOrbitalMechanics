@@ -1,14 +1,9 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
 \bigskip\bigskip
-\subsection{Glossary of Terms}
 
-Throughout this document, many terms used may be unfamiliar to the reader. Some of these terms are defined here. General methamtical terms are not defined here, as it is assumed that the reader has some education in basic mathematics up to and including ordinary differential equations.
-
-
-\bigskip\bigskip
 \subsection{Orbit Planar Geometry}
 
 \begin{figure}[H]
@@ -30,9 +25,9 @@ Throughout this document, many terms used may be unfamiliar to the reader. Some 
 
         \draw[|<->|, thick] (0,0) -- (\ap-\SMA,0) node[midway, below] {Focus Distance $c$};
 
-        \draw[|<->|, thick] (\ap-\SMA, -\SmA/3) -- (\SMA, -\SmA/3) node[midway, below] {$r_\text{pe}$};
+        \draw[|<->|, thick] (\ap-\SMA, -\SmA/3) -- (\SMA, -\SmA/3) node[midway, below] {$\st{r}{pe}$};
 
-        \draw[|<->|, thick] (-\SMA, -\SmA/3) -- (\ap-\SMA, -\SmA/3) node[midway, below] {Apoapsis Radius $r_\text{ap}$};
+        \draw[|<->|, thick] (-\SMA, -\SmA/3) -- (\ap-\SMA, -\SmA/3) node[midway, below] {Apoapsis Radius $\st{r}{ap}$};
 
         \filldraw[] (\SMA,0) circle (2pt) node[right] {Periapsis};
         \filldraw[] (-\SMA,0) circle (2pt) node[left] {Apoapsis};
@@ -42,7 +37,7 @@ Throughout this document, many terms used may be unfamiliar to the reader. Some 
     \caption{An orbit with important geometric values labeled}\label{fig:Orbit Diagram}
 \end{figure}
 
-In the above figure, the semi-major axis $a$, semi-minor axis $b$, semi-latus rectum $p$, focus distance $c$, apoapsis radius $r_\text{ap}$, and periapsis radius $r_\text{pe}$ are all labeled. The apoapsis is the highest point in the orbit, and the periapsis is the lowest. The major axis is the largest distance across the ellipse, while the minor axis is the smallest. The latus rectum is the width of the ellipse perpendicular to the foci. The focus distance is the distance between the foci and the center of the ellipse.
+In the above figure, the semi-major axis $a$, semi-minor axis $b$, semi-latus rectum $p$, focus distance $c$, apoapsis radius $\st{r}{ap}$, and periapsis radius $\st{r}{pe}$ are all labeled. The apoapsis is the highest point in the orbit, and the periapsis is the lowest. The major axis is the largest distance across the ellipse, while the minor axis is the smallest. The latus rectum is the width of the ellipse perpendicular to the foci. The focus distance is the distance between the foci and the center of the ellipse.
 
 
 \bigskip\bigskip

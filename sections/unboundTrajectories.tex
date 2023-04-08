@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
@@ -35,11 +35,11 @@ This trajectory can be parameterized. It can be seen that the radius in the $x$ 
 
 The parameter $s$ is used instead of the typical $t$ to show that this parameterization does \textit{not} describe the location of a satellite with respect to time, but instead describes the geometry of the trajectory.
 
-Hyperbolas approach a tangent line in their end behavior. Finding the angle $\theta_\text{hyp}$ of this tangent line to the horizontal will prove useful to analysis of the hyperbola. This will be done by finding the end behavior of the derivative of the parameterization.
+Hyperbolas approach a tangent line in their end behavior. Finding the angle $\st{\theta}{hyp}$ of this tangent line to the horizontal will prove useful to analysis of the hyperbola. This will be done by finding the end behavior of the derivative of the parameterization.
 
 \begin{align*}
     \vv{r}'(s)        & =a\left\langle\sinh(s)-e, \sqrt{e^2-1}\cosh(s)\right\rangle                                                                  \\
-    \theta_\text{hyp} & =\lim_{s\rightarrow\infty}\arctan\left(\frac{y}{x}\right)                                                                    \\
+    \st{\theta}{hyp} & =\lim_{s\rightarrow\infty}\arctan\left(\frac{y}{x}\right)                                                                    \\
                       & =\lim_{s\rightarrow\infty}\arctan\left(\frac{\sqrt{e^2-1}\cosh(s)}{\sinh(s)-e}\right)                                        \\
                       & =\lim_{s\rightarrow\infty}\arctan\left(\sqrt{e^2-1}\frac{\cosh(s)}{\sinh(s)-e}\right)                                        \\
                       & =\arctan\left(\lim_{s\rightarrow\infty}\left(\sqrt{e^2-1}\frac{\cosh(s)}{\sinh(s)-e}\right)\right)                           \\
@@ -52,7 +52,7 @@ Hyperbolas approach a tangent line in their end behavior. Finding the angle $\th
 
 The angle from the horizontal (that is to say, a line passing through the periapsis and the planet) to the beginning/end tangent line is
 \begin{equation}\label{Hyperbolic entry/exit angle}
-    \theta_\text{hyp}=\arctan\left(\sqrt{e^2-1}\right)
+    \st{\theta}{hyp}=\arctan\left(\sqrt{e^2-1}\right)
 \end{equation}
 
 \begin{figure}[H]
@@ -69,25 +69,25 @@ The angle from the horizontal (that is to say, a line passing through the periap
         \draw[dashed] (0.5,0.5*\m) -- (-5,-5*\m);
         \draw[dashed] (0.5,-0.5*\m) -- (-5,5*\m);
 
-        \draw[] (-\arcRad,0) arc (180:180+\thtaHyp:\arcRad) node[midway, right] {$\theta_\text{hyp}$};
-        \draw[] (180-\thtaHyp:1.5*\arcRad) arc (180-\thtaHyp:180+\thtaHyp:1.5*\arcRad) node[midway, left] {$2\theta_\text{hyp}$};
+        \draw[] (-\arcRad,0) arc (180:180+\thtaHyp:\arcRad) node[midway, right] {$\st{\theta}{hyp}$};
+        \draw[] (180-\thtaHyp:1.5*\arcRad) arc (180-\thtaHyp:180+\thtaHyp:1.5*\arcRad) node[midway, left] {$2\st{\theta}{hyp}$};
 
     \end{tikzpicture}
     \caption{A hyperbolic trajectory with the tangent lines indicated}\label{Hyperbola with angles}
 \end{figure}
 
-\subsubsection{Hyperbola Eccentricity in Terms of \texorpdfstring{$\theta_\text{hyp}$}{Theta Hyperbolic}}
+\subsubsection{Hyperbola Eccentricity in Terms of \texorpdfstring{$\st{\theta}{hyp}$}{Theta Hyperbolic}}
 
 From equation \eqref{Hyperbolic entry/exit angle}, the eccentricity can be isolated.
 \begin{align*}
-    \theta_\text{hyp}       & =\arctan\left(\sqrt{e^2-1}\right) \\
-    \tan(\theta_\text{hyp}) & =\sqrt{e^2-1}                     \\
-    e^2-1                   & =\tan^2(\theta_\text{hyp})        \\
-    e^2                     & =1+\tan^2(\theta_\text{hyp})      \\
-    e^2                     & =\sec^2(\theta_\text{hyp})        \\
+    \st{\theta}{hyp}       & =\arctan\left(\sqrt{e^2-1}\right) \\
+    \tan(\st{\theta}{hyp}) & =\sqrt{e^2-1}                     \\
+    e^2-1                   & =\tan^2(\st{\theta}{hyp})        \\
+    e^2                     & =1+\tan^2(\st{\theta}{hyp})      \\
+    e^2                     & =\sec^2(\st{\theta}{hyp})        \\
 \end{align*}
 \begin{equation}\label{Hyperbola Eccentricity}
-    e=\sec(\theta_\text{hyp})
+    e=\sec(\st{\theta}{hyp})
 \end{equation}
 
 \subsubsection{Hyperbola Semi-Major Axis in Terms of Periapsis}
@@ -95,11 +95,11 @@ From equation \eqref{Hyperbolic entry/exit angle}, the eccentricity can be isola
 Equations \eqref{Periapsis Radius Geometric} and \eqref{Hyperbola Eccentricity} can be combined to isolate the semi-major axis in terms of the periapsis radius.
 
 \begin{align*}
-    r_\text{pe} & =a(1-e)                       \\
-    r_\text{pe} & =a(1-\sec(\theta_\text{hyp})) \\
+    \st{r}{pe} & =a(1-e)                       \\
+    \st{r}{pe} & =a(1-\sec(\st{\theta}{hyp})) \\
 \end{align*}
 \begin{equation}\label{Hyperbola SMA}
-    a=\frac{{r_\text{pe}}}{1-\sec(\theta_\text{hyp})}
+    a=\frac{{\st{r}{pe}}}{1-\sec(\st{\theta}{hyp})}
 \end{equation}
 
 \bigskip\bigskip
@@ -124,31 +124,31 @@ The eccentricity of a parabola is, by definition, $e=1$. It is also proven in Se
       & =\sqrt{\frac{2\mu}{r}-\cancelto{0}{\lim_{a\rightarrow\infty}\left(\frac{\mu}{a}\right)}} \\
 \end{align*}
 \begin{equation}
-    v_\text{parabola}=v_\text{esc}=\sqrt{\frac{2\mu}{r}}
+    \st{v}{parabola}=\st{v}{escape}=\sqrt{\frac{2\mu}{r}}
 \end{equation}
 
-Since a parabola has a determined unique shape, there is only one parameter for it; its size. The defining parameter for a parabolic trajectory is either the periapsis $r_\text{pe}$ or the semi-latus rectum $p$, which can be related using Equation \eqref{Polar with p, e} keeping in mind that at periapsis the cosine will evaluate to 1
+Since a parabola has a determined unique shape, there is only one parameter for it; its size. The defining parameter for a parabolic trajectory is either the periapsis $\st{r}{pe}$ or the semi-latus rectum $p$, which can be related using Equation \eqref{Polar with p, e} keeping in mind that at periapsis the cosine will evaluate to 1
 \begin{align*}
     r           & =\frac{p}{1+e\cos(\theta-\omega)} \\
-    r_\text{pe} & =\frac{p}{1+\cos(0)}              \\
-    r_\text{pe} & =\frac{p}{2}                      \\
+    \st{r}{pe} & =\frac{p}{1+\cos(0)}              \\
+    \st{r}{pe} & =\frac{p}{2}                      \\
 \end{align*}
 \begin{equation}
-    p_\text{parabola}=2r_\text{pe,parabola}
+    \st{p}{parabola}=2\st{r}{pe,parabola}
 \end{equation}
 
 To determine the periapsis of a parabolic trajectory from a measured velocity, angular momentum must be used
 
 \begin{align*}
-    h_\text{pe}            & = h                                                   \\
-    r_\text{pe}v_\text{pe} & =rv\cos(\phi)                                         \\
-    r_\text{pe}            & =\frac{rv\cos(\phi)}{v_\text{pe}}                     \\
-                           & =\frac{rv\cos(\phi)}{\sqrt{\frac{2\mu}{r_\text{pe}}}} \\
-    r_\text{pe}^2          & =\frac{r^2v^2\cos^2(\phi)}{\frac{2\mu}{r_\text{pe}}}  \\
-    r_\text{pe}^2          & =\frac{r_\text{pe}r^2v^2\cos^2(\phi)}{2\mu}           \\
+    \st{h}{pe}            & = h                                                   \\
+    \st{r}{pe}\st{v}{pe} & =rv\cos(\phi)                                         \\
+    \st{r}{pe}            & =\frac{rv\cos(\phi)}{\st{v}{pe}}                     \\
+                           & =\frac{rv\cos(\phi)}{\sqrt{\frac{2\mu}{\st{r}{pe}}}} \\
+    \st{r}{pe}^2          & =\frac{r^2v^2\cos^2(\phi)}{\frac{2\mu}{\st{r}{pe}}}  \\
+    \st{r}{pe}^2          & =\frac{\st{r}{pe}r^2v^2\cos^2(\phi)}{2\mu}           \\
 \end{align*}
 \begin{equation}\label{Periapsis Radius Parabola}
-    r_\text{pe,parabola}=\frac{r^2v^2\cos^2(\phi)}{2\mu}
+    \st{r}{pe,parabola}=\frac{r^2v^2\cos^2(\phi)}{2\mu}
 \end{equation}
 
 \bigskip\bigskip
@@ -156,11 +156,11 @@ To determine the periapsis of a parabolic trajectory from a measured velocity, a
 
 \bigskip
 Hyperbolic orbits approach a linear trajectory with an angle of
-$$\theta_\text{hyp}=\arctan\left(\sqrt{e^2-1}\right)$$
+$$\st{\theta}{hyp}=\arctan\left(\sqrt{e^2-1}\right)$$
 
 \bigskip
-Because hyperbolas don't have physically meaningful apoapses, the semi-major axis and eccentricity can be defined in terms of the entry/exit angle $\theta_\text{hyp}$ and the periapsis radius $r_\text{pe}$.
-$$e=\sec(\theta_\text{hyp})\qquad\qquad a=\frac{{r_\text{pe}}}{1-\sec(\theta_\text{hyp})}$$
+Because hyperbolas don't have physically meaningful apoapses, the semi-major axis and eccentricity can be defined in terms of the entry/exit angle $\st{\theta}{hyp}$ and the periapsis radius $\st{r}{pe}$.
+$$e=\sec(\st{\theta}{hyp})\qquad\qquad a=\frac{{\st{r}{pe}}}{1-\sec(\st{\theta}{hyp})}$$
 
 \bigskip
 Parabolic trajectories occur at exactly escape velocity, meaning that at all points
@@ -168,10 +168,10 @@ $$v=\sqrt{\frac{2\mu}{r}}$$
 
 \bigskip
 In a parabolic trajectory, the semi-latus rectum and periapsis are related by
-$$p_\text{parabola}=2r_\text{pe,parabola}$$
+$$\st{p}{parabola}=2\st{r}{pe,parabola}$$
 
 \bigskip
 From telemetry data, the periapsis radius can be found with
-$$r_\text{pe,parabola}=\frac{r^2v^2\cos^2(\phi)}{2\mu}$$
+$$\st{r}{pe,parabola}=\frac{r^2v^2\cos^2(\phi)}{2\mu}$$
 
 \end{document}

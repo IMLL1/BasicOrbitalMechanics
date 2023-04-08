@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
@@ -60,12 +60,12 @@ Specific energy $\varepsilon$ is the total energy in an orbit, normalized with r
 
 Conservation of specific energy was proven earlier, but a more useful expression for it can be found.
 
-Specific energy is constant, so it will be found at periapsis. First, velocity must be found by setting Equation \eqref{Angular Momentum Physical Definition} (the physical definition of angular momentum, $rv_\perp$) equal to its derived counterpart ($\sqrt{a\mu(1-e^2)}$) from Equation \eqref{Angular Momentum Geometric Definition}. Note that at periapsis, velocity is entirely normal to the radial vector, so $v_\perp=v$, and recall that Equation \eqref{Periapsis Radius Geometric} states $r_\text{pe}=a(1-e)$.
+Specific energy is constant, so it will be found at periapsis. First, velocity must be found by setting Equation \eqref{Angular Momentum Physical Definition} (the physical definition of angular momentum, $rv_\perp$) equal to its derived counterpart ($\sqrt{a\mu(1-e^2)}$) from Equation \eqref{Angular Momentum Geometric Definition}. Note that at periapsis, velocity is entirely normal to the radial vector, so $v_\perp=v$, and recall that Equation \eqref{Periapsis Radius Geometric} states $\st{r}{pe}=a(1-e)$.
 \begin{align*}
-    r_\text{pe}v_\text{pe} & = \sqrt{\mu{}a(1-e^2)}                       \\
-    a(1-e)v_\text{pe}      & = \sqrt{\mu{}a(1-e)(1+e)}                    \\
-    v_\text{pe}            & = \sqrt{\frac{\mu{}a(1-e)(1+e)}{a^2(1-e)^2}} \\
-    v_\text{pe}            & = \sqrt{\frac{\mu{}(1+e)}{a(1-e)}}           \\
+    \st{r}{pe}\st{v}{pe} & = \sqrt{\mu{}a(1-e^2)}                       \\
+    a(1-e)\st{v}{pe}      & = \sqrt{\mu{}a(1-e)(1+e)}                    \\
+    \st{v}{pe}            & = \sqrt{\frac{\mu{}a(1-e)(1+e)}{a^2(1-e)^2}} \\
+    \st{v}{pe}            & = \sqrt{\frac{\mu{}(1+e)}{a(1-e)}}           \\
 \end{align*}
 
 Now, specific energy can be found.
@@ -105,12 +105,12 @@ This equation describes velocity of a satellite as a function of its distance fr
 
 For circular orbits where $a=r$, this simplifies to
 \begin{equation}\label{Circular Velocity}
-    v_\text{circ} = \sqrt{\frac{\mu}{r}}
+    \st{v}{circ} = \sqrt{\frac{\mu}{r}}
 \end{equation}
 
 Escape is achieved when a satellite is able to approach infinite distance with a real-valued velocity. The minimum such velocity that the satellite can approach is zero. From Equation \eqref{Vis-Viva Equation}, this can only happen if $a$ is infinite. This gives escape velocity as a function of radius to be
 \begin{equation}\label{Escape velocity}
-    v_\text{esc}=\sqrt{\frac{2\mu}{r}}
+    \st{v}{escape}=\sqrt{\frac{2\mu}{r}}
 \end{equation}
 
 \bigskip\bigskip
@@ -214,39 +214,39 @@ At this point, the transformation will be made to integrate with respect to $r$ 
 Now, the integral can be transformed to be with respect to $r$.
 
 \begin{align*}
-    T_p & = \frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{\left(1+e\cos\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)\right)^2}\frac{\left(1+e\cos\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)\right)^2}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{\left(1+e\left(\frac{a(1-e^2)-r}{er}\right)\right)^2}\frac{\left(1+e\left(\frac{a(1-e^2)-r}{er}\right)\right)^2}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr                                                      \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr                                                                                                                                                                       \\
+    T_p & = \frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{\left(1+e\cos\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)\right)^2}\frac{\left(1+e\cos\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)\right)^2}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{\left(1+e\left(\frac{a(1-e^2)-r}{er}\right)\right)^2}\frac{\left(1+e\left(\frac{a(1-e^2)-r}{er}\right)\right)^2}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr                                                      \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr                                                                                                                                                                       \\
 \end{align*}
 
 The property can now be applied that $\sin(\arccos(\theta))=\sqrt{1-\theta^2}$
 
 \begin{align*}
-    T_p & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr                                                         \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{ea\sqrt{1-\left(\frac{a(1-e^2)-r}{er}\right)^2}(1-e^2)}dr                                                                        \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{ea\sqrt{1-\left(\frac{a^2(1-e^2)^2-2ar(1-e^2)+r^2}{e^2r^2}\right)}(1-e^2)}dr                                                     \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{1}{ea\sqrt{\frac{e^2r^2-a^2(1-e^2)^2+2ar(1-e^2)-r^2}{e^2r^2}}(1-e^2)}dr                                                             \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{er}{ea\sqrt{-r^2(1-e^2)-a^2(1-e^2)^2+2ar(1-e^2 )}(1-e^2)}dr                                                                         \\
-        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{r}{a(1-e^2)^{3/2}\sqrt{-r^2-a^2(1-e^2)+2ar}}dr                                                                                      \\
-        & =\sqrt{\frac{a}{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{r}{\sqrt{-r^2-a^2(1-e^2)+2ar}}dr                                                                                                                      \\
-        & =\sqrt{\frac{a}{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{r}{\sqrt{-(r-a)^2+a^2(1-(1-e^2))}}dr                                                                                                                  \\
-        & =\sqrt{\frac{a}{\mu}}\int_{r_\text{pe}}^{r(\theta)}\frac{r}{\sqrt{-(a-r)^2+a^2e^2}}dr                                                                                                                          \\
+    T_p & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{ea\sin\left(\cos^{-1}\left(\frac{a(1-e^2)-r}{er}\right)\right)(1-e^2)}dr                                                         \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{ea\sqrt{1-\left(\frac{a(1-e^2)-r}{er}\right)^2}(1-e^2)}dr                                                                        \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{ea\sqrt{1-\left(\frac{a^2(1-e^2)^2-2ar(1-e^2)+r^2}{e^2r^2}\right)}(1-e^2)}dr                                                     \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{1}{ea\sqrt{\frac{e^2r^2-a^2(1-e^2)^2+2ar(1-e^2)-r^2}{e^2r^2}}(1-e^2)}dr                                                             \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{er}{ea\sqrt{-r^2(1-e^2)-a^2(1-e^2)^2+2ar(1-e^2 )}(1-e^2)}dr                                                                         \\
+        & =\frac{\sqrt{a^3(1-e^2)^3}}{\sqrt{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{r}{a(1-e^2)^{3/2}\sqrt{-r^2-a^2(1-e^2)+2ar}}dr                                                                                      \\
+        & =\sqrt{\frac{a}{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{r}{\sqrt{-r^2-a^2(1-e^2)+2ar}}dr                                                                                                                      \\
+        & =\sqrt{\frac{a}{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{r}{\sqrt{-(r-a)^2+a^2(1-(1-e^2))}}dr                                                                                                                  \\
+        & =\sqrt{\frac{a}{\mu}}\int_{\st{r}{pe}}^{r(\theta)}\frac{r}{\sqrt{-(a-r)^2+a^2e^2}}dr                                                                                                                          \\
         & \phantom{=}\qquad{}\text{Substitution: }(a-r)=u_1\qquad{}du_1=-dr                                                                                                                                              \\
-        & =\sqrt{\frac{a}{\mu}}\int_{a-r_\text{pe}}^{a-r(\theta)}\frac{u_1-a}{\sqrt{-u_1^2+a^2e^2}}du_1                                                                                                                  \\
-        & =\sqrt{\frac{a}{\mu}}\left(\int_{a-r_\text{pe}}^{a-r(\theta)}\frac{u_1}{\sqrt{a^2e^2-u_1^2}}du_1-\int_{a-r_\text{pe}}^{a-r(\theta)}\frac{a}{\sqrt{a^2e^2-u_1^2}}du_1\right)                                    \\
+        & =\sqrt{\frac{a}{\mu}}\int_{a-\st{r}{pe}}^{a-r(\theta)}\frac{u_1-a}{\sqrt{-u_1^2+a^2e^2}}du_1                                                                                                                  \\
+        & =\sqrt{\frac{a}{\mu}}\left(\int_{a-\st{r}{pe}}^{a-r(\theta)}\frac{u_1}{\sqrt{a^2e^2-u_1^2}}du_1-\int_{a-\st{r}{pe}}^{a-r(\theta)}\frac{a}{\sqrt{a^2e^2-u_1^2}}du_1\right)                                    \\
         & \phantom{=}\qquad{}\text{Substitution: }a^2e^2-u_1^2=u_2\qquad{}du_2=-2u_1du_1                                                                                                                                 \\
-        & =\sqrt{\frac{a}{\mu}}\left(\int_{(ae)^2-(a-r_\text{pe})^2}^{(ae)^2-(a-r(\theta))^2}\frac{-0.5}{\sqrt{u_2}}du_2-\int_{a-r_\text{pe}}^{a-r(\theta)}\frac{a}{ae\sqrt{1-\left(\frac{u_1}{ae}\right)^2}}du_1\right) \\
+        & =\sqrt{\frac{a}{\mu}}\left(\int_{(ae)^2-(a-\st{r}{pe})^2}^{(ae)^2-(a-r(\theta))^2}\frac{-0.5}{\sqrt{u_2}}du_2-\int_{a-\st{r}{pe}}^{a-r(\theta)}\frac{a}{ae\sqrt{1-\left(\frac{u_1}{ae}\right)^2}}du_1\right) \\
         & \phantom{=}\qquad{}\text{Substitution: }\frac{u_1}{ae}=u_3\qquad{}du_3=\frac{1}{ae}du_1                                                                                                                        \\
-        & =\sqrt{\frac{a}{\mu}}\left(\frac{-1}{2}\int_{(ae)^2-(a-r_\text{pe})^2}^{(ae)^2-(a-r(\theta))^2}u_2^{-1/2}du_2+a\int_{(a-r_\text{pe})/ae}^{(a-r(\theta))/ae}\frac{-1}{\sqrt{1-u_3^2}}du_3\right)                \\
-        & =\sqrt{\frac{a}{\mu}}\left(-\Big(\sqrt{u_2}\Big)_{(ae)^2-(a-r_\text{pe})^2}^{(ae)^2-(a-r(\theta))^2}+a\Big(\cos^{-1}(u_3)\Big)_{(a-r_\text{pe})/ae}^{(a-r(\theta))/ae}\right)                                  \\
-        & =\sqrt{\frac{a}{\mu}}\left(a\Big(\cos^{-1}(u_3)\Big)_{(a-r_\text{pe})/ae}^{(a-r(\theta))/ae}-\Big(\sqrt{u_2}\Big)_{(ae)^2-(a-r_\text{pe})^2}^{(ae)^2-(a-r(\theta))^2}\right)                                   \\
-        & =\sqrt{\frac{a}{\mu}}\left(a\cos^{-1}\left(\frac{a-r}{ae}\right)\Big|_{r_\text{pe}}^{r(\theta)}-\sqrt{(ae)^2-(a-r)^2}\Big|_{r_\text{pe}}^{r(\theta)}\right)                                                    \\
-        & =\sqrt{\frac{a}{\mu}}\left(a\cos^{-1}\left(\frac{a-r}{ae}\right)-\sqrt{(ae)^2-(a-r)^2}\right)_{r_\text{pe}}^{r(\theta)}                                                                                        \\
-        & =\sqrt{\frac{a}{\mu}}\left(a\cos^{-1}\left(\frac{a-r}{ae}\right)-a\sqrt{e^2-\left(1-\frac{r}{a}\right)^2}\right)_{r_\text{pe}}^{r(\theta)}                                                                     \\
-        & =\sqrt{\frac{a^3}{\mu}}\left(\cos^{-1}\left(\frac{a-r}{ae}\right)- \sqrt{e^2-\left(1-\frac{r}{a}\right)^2}\right)_{r_\text{pe}}^{r(\theta)}                                                                    \\
+        & =\sqrt{\frac{a}{\mu}}\left(\frac{-1}{2}\int_{(ae)^2-(a-\st{r}{pe})^2}^{(ae)^2-(a-r(\theta))^2}u_2^{-1/2}du_2+a\int_{(a-\st{r}{pe})/ae}^{(a-r(\theta))/ae}\frac{-1}{\sqrt{1-u_3^2}}du_3\right)                \\
+        & =\sqrt{\frac{a}{\mu}}\left(-\Big(\sqrt{u_2}\Big)_{(ae)^2-(a-\st{r}{pe})^2}^{(ae)^2-(a-r(\theta))^2}+a\Big(\cos^{-1}(u_3)\Big)_{(a-\st{r}{pe})/ae}^{(a-r(\theta))/ae}\right)                                  \\
+        & =\sqrt{\frac{a}{\mu}}\left(a\Big(\cos^{-1}(u_3)\Big)_{(a-\st{r}{pe})/ae}^{(a-r(\theta))/ae}-\Big(\sqrt{u_2}\Big)_{(ae)^2-(a-\st{r}{pe})^2}^{(ae)^2-(a-r(\theta))^2}\right)                                   \\
+        & =\sqrt{\frac{a}{\mu}}\left(a\cos^{-1}\left(\frac{a-r}{ae}\right)\Big|_{\st{r}{pe}}^{r(\theta)}-\sqrt{(ae)^2-(a-r)^2}\Big|_{\st{r}{pe}}^{r(\theta)}\right)                                                    \\
+        & =\sqrt{\frac{a}{\mu}}\left(a\cos^{-1}\left(\frac{a-r}{ae}\right)-\sqrt{(ae)^2-(a-r)^2}\right)_{\st{r}{pe}}^{r(\theta)}                                                                                        \\
+        & =\sqrt{\frac{a}{\mu}}\left(a\cos^{-1}\left(\frac{a-r}{ae}\right)-a\sqrt{e^2-\left(1-\frac{r}{a}\right)^2}\right)_{\st{r}{pe}}^{r(\theta)}                                                                     \\
+        & =\sqrt{\frac{a^3}{\mu}}\left(\cos^{-1}\left(\frac{a-r}{ae}\right)- \sqrt{e^2-\left(1-\frac{r}{a}\right)^2}\right)_{\st{r}{pe}}^{r(\theta)}                                                                    \\
 \end{align*}
 
-When the function is evaluated at $r_\text{pe}$, the result is $0$. This means that the lower bound of the function can be removed, and the upper bound can be set as the singular argument of the function.
+When the function is evaluated at $\st{r}{pe}$, the result is $0$. This means that the lower bound of the function can be removed, and the upper bound can be set as the singular argument of the function.
 
 The time since periapsis for an orbit can be evaluated at any radius $r$ with
 \begin{equation}\label{Time since periapsis}
@@ -277,10 +277,10 @@ The velocity at any point in an orbit can be found with
 $$v=\sqrt{\frac{2\mu}{r}-\frac{\mu}{a}}$$
 
 Velocity for circular orbit is
-$$v_\text{circ}=\sqrt{\frac{\mu}{r}}$$
+$$\st{v}{circ}=\sqrt{\frac{\mu}{r}}$$
 
 Escape velocity at any altitude is
-$$v_\text{esc}=\sqrt{\frac{2\mu}{r}}=v_\text{circ}\sqrt{2}$$
+$$\st{v}{escape}=\sqrt{\frac{2\mu}{r}}=\st{v}{circ}\sqrt{2}$$
 
 \bigskip
 While the flight path angle can be found as

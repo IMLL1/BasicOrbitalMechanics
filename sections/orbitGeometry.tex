@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
@@ -11,15 +11,15 @@ Throughout this section, it will be shown that an orbit can be defined uniquely 
 
 From Figure \ref{fig:Orbit Diagram}, a geometric observation can be made.
 \begin{align*}
-    r_\text{pe}+c+a & = 2a     \\
-    r_\text{pe}     & =a-c     \\
+    \st{r}{pe}+c+a & = 2a     \\
+    \st{r}{pe}     & =a-c     \\
                     & =a-ea    \\
                     & = a(1-e)
 \end{align*}
 
 TThis equation is valid for all elliptic and hyperbolic orbits, but not for parabolic ones (the semi-major axis of a parabola is infinite, while $1-e$ equals zero in a parabola).
 \begin{equation}\label{Periapsis Radius Geometric}
-    r_\text{pe}=a(1-e)
+    \st{r}{pe}=a(1-e)
 \end{equation}
 
 \bigskip\bigskip
@@ -27,14 +27,14 @@ TThis equation is valid for all elliptic and hyperbolic orbits, but not for para
 
 Using the same figure and similar observations and reasoning, the apoapsis radius can be found.
 \begin{align*}
-    r_\text{ap} & = a+c   \\
+    \st{r}{ap} & = a+c   \\
                 & =a+ea   \\
                 & =a(1+e)
 \end{align*}
 
 The apoapsis is not defined for hyperbolic or parabolic orbits.
 \begin{equation}\label{Apoapsis Radius Geometric}
-    r_\text{ap}=a(1+e)
+    \st{r}{ap}=a(1+e)
 \end{equation}
 
 \bigskip\bigskip
@@ -44,7 +44,7 @@ The Semi-Minor Axis $b$ is slightly harder to find than the apoapsis and periaps
 
 Instead, the definition of an ellipse wil be brought in. In a circle, the distance to the center is always constant. In an ellipse, the sum of distances to the foci is always constant. This distance will be denoted $2d$.
 \begin{align*}
-    2d(\text{At Pe}) & = r_\text{pe}+(r_\text{ap}) \\
+    2d(\text{At Pe}) & = \st{r}{pe}+(\st{r}{ap}) \\
                      & = 2a                        \\
     d                & =a
 \end{align*}
@@ -66,7 +66,7 @@ A right triangle can then be drawn with which further reasoning can be applied
         \filldraw[red] (0,\SmA) circle (2pt);
 
         \draw[thin, densely dashed] (0,0) ellipse ({\SMA} and {\SmA});
-        \draw[<->, thick] (0, 0) -- (\SMA-\pe, 0) node[midway, below] {$a-r_\text{pe}$};
+        \draw[<->, thick] (0, 0) -- (\SMA-\pe, 0) node[midway, below] {$a-\st{r}{pe}$};
         \draw[<->, thick] (0, 0) -- (0, \SmA) node[midway, right] {$b$};
 
         \draw[<->, thick] (-\ap+\SMA, 0) -- (0, \SmA) node[midway, left] {$d$};
@@ -79,12 +79,12 @@ A right triangle can then be drawn with which further reasoning can be applied
 
 The right triangle that will be examined is the one formed by the center of the orbit, the left focus, and the point in the orbit on the semi-minor axis. The Pythagorean Theorem can be applied to find the unknown $b$, keeping in mind that $d=a$.
 \begin{align*}
-    (a-r_\text{pe})^2+b^2 & = d^2                   \\
-    (a-r_\text{pe})^2+b^2 & = a^2                   \\
-    b^2                   & = a^2-(a-r_\text{pe})^2 \\
+    (a-\st{r}{pe})^2+b^2 & = d^2                   \\
+    (a-\st{r}{pe})^2+b^2 & = a^2                   \\
+    b^2                   & = a^2-(a-\st{r}{pe})^2 \\
 \end{align*}
 
-Note from Figure \ref{fig:Orbit Diagram} that $r_\text{pe}+c=a$, meaning that $a-r_\text{pe}=c$, which in turn is defined as $c=ae$
+Note from Figure \ref{fig:Orbit Diagram} that $\st{r}{pe}+c=a$, meaning that $a-\st{r}{pe}=c$, which in turn is defined as $c=ae$
 \begin{align*}
     b^2 & = a^2-(c)^2         \\
     b^2 & = a^2-(ae)^2        \\
@@ -106,37 +106,37 @@ The semi-minor axis is not well defined for hyperbolic orbits. The argument of t
 While $e$ and $a$ are conventionally used as the defining parameters of an orbit, the apses can instead be used to describe elliptic orbits. Once $e$ and $a$ are known, other geometric parameters can be found as before. Hyperbolic and parabolic orbits do not have a defined apoapsis, so this does not apply to them.
 
 \subsubsection{Semi-Major Axis in terms of Apses}
-From Figure \ref{fig:Orbit Diagram}, $a$ can be found in terms of $r_\text{pe}$ and $r_\text{ap}$
+From Figure \ref{fig:Orbit Diagram}, $a$ can be found in terms of $\st{r}{pe}$ and $\st{r}{ap}$
 
 \begin{align*}
-    2a & = r_\text{pe}+r_\text{ap}
+    2a & = \st{r}{pe}+\st{r}{ap}
 \end{align*}
 \begin{equation}\label{SMA in terms of apses}
-    a = \frac{r_\text{pe}+r_\text{ap}}{2}
+    a = \frac{\st{r}{pe}+\st{r}{ap}}{2}
 \end{equation}
 
 \subsubsection{Eccentricity in Terms of Apses}
 
-The eccentricity can also be put in terms of $r_\text{ap}$ and $r_\text{pe}$ using Equations \eqref{Periapsis Radius Geometric} and \eqref{Apoapsis Radius Geometric}.
+The eccentricity can also be put in terms of $\st{r}{ap}$ and $\st{r}{pe}$ using Equations \eqref{Periapsis Radius Geometric} and \eqref{Apoapsis Radius Geometric}.
 \begin{align*}
-    r_\text{ap}             & =a(1+e) & r_\text{pe}             & =a(1-e) \\
-    \frac{r_\text{ap}}{1+e} & =a      & \frac{r_\text{pe}}{1-e} & =a      \\
+    \st{r}{ap}             & =a(1+e) & \st{r}{pe}             & =a(1-e) \\
+    \frac{\st{r}{ap}}{1+e} & =a      & \frac{\st{r}{pe}}{1-e} & =a      \\
 \end{align*}
 
 Setting both sides equal to eachother,
 
 \begin{align*}
-    \frac{r_\text{ap}}{1+e}                                   & =\frac{r_\text{pe}}{1-e}                                                                                                                                                             \\
-    \frac{1+e}{r_\text{ap}}                                   & =\frac{1-e}{r_\text{pe}}                                                                                                                                                             \\
-    \frac{1}{r_\text{ap}}+\frac{e}{r_\text{ap}}               & =\frac{1}{r_\text{pe}}-\frac{e}{r_\text{pe}}                                                                                                                                         \\
-    \frac{e}{r_\text{ap}}+\frac{e}{r_\text{pe}}               & =\frac{1}{r_\text{pe}}-\frac{1}{r_\text{ap}}                                                                                                                                         \\
-    e\left(\frac{1}{r_\text{ap}}+\frac{1}{r_\text{pe}}\right) & =\frac{1}{r_\text{pe}}-\frac{1}{r_\text{ap}}                                                                                                                                         \\
-    e                                                         & =\frac{\frac{1}{r_\text{pe}}-\frac{1}{r_\text{ap}}}{\frac{1}{r_\text{pe}}+\frac{1}{r_\text{ap}}}                                                                                     \\
-                                                              & =\frac{\frac{r_\text{pe}r_\text{ap}}{r_\text{pe}}-\frac{r_\text{pe}r_\text{ap}}{r_\text{ap}}}{\frac{r_\text{pe}r_\text{ap}}{r_\text{pe}}+\frac{r_\text{pe}r_\text{ap}}{r_\text{ap}}} \\
-                                                              & =\frac{r_\text{ap}-r_\text{pe}}{r_\text{ap}+r_\text{pe}}                                                                                                                             \\
+    \frac{\st{r}{ap}}{1+e}                                   & =\frac{\st{r}{pe}}{1-e}                                                                                                                                                             \\
+    \frac{1+e}{\st{r}{ap}}                                   & =\frac{1-e}{\st{r}{pe}}                                                                                                                                                             \\
+    \frac{1}{\st{r}{ap}}+\frac{e}{\st{r}{ap}}               & =\frac{1}{\st{r}{pe}}-\frac{e}{\st{r}{pe}}                                                                                                                                         \\
+    \frac{e}{\st{r}{ap}}+\frac{e}{\st{r}{pe}}               & =\frac{1}{\st{r}{pe}}-\frac{1}{\st{r}{ap}}                                                                                                                                         \\
+    e\left(\frac{1}{\st{r}{ap}}+\frac{1}{\st{r}{pe}}\right) & =\frac{1}{\st{r}{pe}}-\frac{1}{\st{r}{ap}}                                                                                                                                         \\
+    e                                                         & =\frac{\frac{1}{\st{r}{pe}}-\frac{1}{\st{r}{ap}}}{\frac{1}{\st{r}{pe}}+\frac{1}{\st{r}{ap}}}                                                                                     \\
+                                                              & =\frac{\frac{\st{r}{pe}\st{r}{ap}}{\st{r}{pe}}-\frac{\st{r}{pe}\st{r}{ap}}{\st{r}{ap}}}{\frac{\st{r}{pe}\st{r}{ap}}{\st{r}{pe}}+\frac{\st{r}{pe}\st{r}{ap}}{\st{r}{ap}}} \\
+                                                              & =\frac{\st{r}{ap}-\st{r}{pe}}{\st{r}{ap}+\st{r}{pe}}                                                                                                                             \\
 \end{align*}
 \begin{equation}\label{Accentricity in terms of apses}
-    e=\frac{r_\text{ap}-r_\text{pe}}{r_\text{ap}+r_\text{pe}}
+    e=\frac{\st{r}{ap}-\st{r}{pe}}{\st{r}{ap}+\st{r}{pe}}
 \end{equation}
 
 \bigskip\bigskip
@@ -146,7 +146,7 @@ Throughout this section, many geometric relationships have been found describing
 
 \bigskip
 The periapsis and apoapsis radii are
-$$r_\text{pe}=a(1-e)\qquad\text{and}\qquad r_\text{ap}=a(1+e)$$
+$$\st{r}{pe}=a(1-e)\qquad\text{and}\qquad \st{r}{ap}=a(1+e)$$
 
 \bigskip
 The semi-minor axis of the orbit is
@@ -154,8 +154,8 @@ $$b=a\sqrt{|1-e^2|}$$
 
 \bigskip
 The semi-major axis and eccentricity of an elliptic orbit can be stated in terms of known periapsis and apoapsis radii
-$$a=\frac{r_\text{pe}+r_\text{ap}}{2}\qquad\qquad e=\frac{r_\text{ap}-r_\text{pe}}{r_\text{ap}+r_\text{pe}}$$
+$$a=\frac{\st{r}{pe}+\st{r}{ap}}{2}\qquad\qquad e=\frac{\st{r}{ap}-\st{r}{pe}}{\st{r}{ap}+\st{r}{pe}}$$
 
-Because hyperbolas don't have physically meaningful apoapses, the semi-major axis and eccentricity can be defined in terms of the entry/exit angle $\theta_\text{hyp}$ and the periapsis radius.
-$$e=\sec(\theta_\text{hyp})\qquad\qquad a=\frac{{r_\text{pe}}}{1-\sec(\theta_\text{hyp})}$$
+Because hyperbolas don't have physically meaningful apoapses, the semi-major axis and eccentricity can be defined in terms of the entry/exit angle $\st{\theta}{hyp}$ and the periapsis radius.
+$$e=\sec(\st{\theta}{hyp})\qquad\qquad a=\frac{{\st{r}{pe}}}{1-\sec(\st{\theta}{hyp})}$$
 \end{document}
