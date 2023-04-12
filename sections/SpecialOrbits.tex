@@ -2,38 +2,58 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
-%TODO: HEADER
+There are some orbits that are particularly useful, and deserve some mention of their own.
 
 \bigskip\bigskip
-\subsection{Geosynchronous Orbits (WIP)}\label{Geosynchronous Orbits}
+\subsection{Synchronous Orbits}\label{Synchronous Orbits}
 
-%TODO
+To motivate this orbit, a communications satellite example will be used. An Earth-based communications network will beam signals into space via a fixed dish, with the intention of these signals being received by a satellite (or a satellite network) and then processes, amplified, or redirected. If the communications satellite is in a low orbit, it will likely transit across the sky rather quickly. This is rather inconvenient for the design of the ground-based systems, as it requires the dish to pivot so that it always points toward the satellite. If instead the satellite's orbit can be designed such that it is always fixed in the sky. To achieve this, the satellite's latitude and altitude must be fixed. This necessitates a circular (to maintain altitude) un-inclined (to maintain latitude) orbit. Equation \eqref{Period Geometric} can be solved for $\st{a}{synch}=\st{r}{synch}$
+
+\begin{align*}
+    \st{T}{orbit}& = T  \\
+    \sqrt{\frac{4\pi^2 a^3}{\mu}} & = T  \\
+    \frac{4\pi^2 a^3}{\mu} & = T^2\\
+    \frac{4\pi^2 r^3}{\mu} & = T^2\\
+    r^3& = \frac{\mu T^2}{4\pi^2} \\
+    r  & = \sqrt[3]{\frac{\mu T^2}{4\pi^2}} \\
+\end{align*}
+
+Where $T$ is the sidereal period of the planet, and $r$ is the resulting radius of a syncrhonous orbit.
+
+\begin{equation}\label{Syncrhonous Orbit}
+    r = \sqrt[3]{\frac{\mu T^2}{4\pi^2}}
+\end{equation}
 
 \bigskip\bigskip
-\subsection{Lagrange Points (WIP)}\label{Lagrange Points}
+\subsection{Lagrange Points}\label{Lagrange Points}
 
 Up to this point, trajectories have all assumed a single gravitational influence. Section \ref{Patched Conics} described how to use this approximation to generate trajectories between multiple bodies. However, by taking into account multiple gravitational attractors, otherwise impossible trajectories can be generated.
 
-To motivate this subject, we will consider a lunar signal relay spacecraft. An orbital engineer wants to find an orbit for a satellite that will keep it at the same spot between Earth and the moon at all times, with the purpose of relaying signals from Earth-based communications networks to moon-orbiting satellites. For the sake of this example, the moon's orbit about Earth can be approximated (within reason) to be perfectly circular. Because the satellite is between Earth and the moon, $0<\st{a}{sat}<\st{a}{moon}$.In order for this spacecraft to achieve the desired orbit, its orbital period must match that of the moon. Recall from Eqaution \eqref{Period Geometric} that the period of an orbit is
+To motivate this subject, we will consider a lunar signal relay spacecraft. An orbital engineer wants to find an orbit for a satellite that will keep it at the same spot between Earth and the moon at all times, with the purpose of relaying signals from Earth-based communications networks to moon-orbiting satellites. For the sake of this example, the moon's orbit about Earth can be approximated (within reason) to be perfectly circular. Because the satellite is between Earth and the moon, $0<\st{a}{sat}<\st{a}{moon}$.In order for this spacecraft to achieve the desired orbit, its orbital period must match that of the moon. Recall from Equation \eqref{Period Geometric} that the period of an orbit is
 
-$$T=\sqrt{\frac{4\pi^2 a}{\mu}}$$
+$$T=\sqrt{\frac{4\pi^2 a^3}{\mu}}$$
 Using this equation, it is clearly impossible for the satellite and the moon to have the same period, as their semi-major axes are different. Neglecting any other gravitational influences, a satellite between Earth and the moon would have to move faster than the moon in order to remain in a circular orbit, and would also have to a further distance to go (a larger orbit means a larger circumference). However, if some force can pull the satellite away from Earth, it will be able to orbit slower at the same altitude. The moon can provide such a force on the satellite. If instead the satellite wants to keep the moon between it and Earth at all times, it would require a downward force, which, if the moon is between it and Earth, the moon can provide. Because of the moon's gravitational influence on the satellite, most orbits at lunar orbital altitude would be unstable. However, the gravitational influence of the moon makes three of them stable. These points at which the satellite can orbit are called Lagrange points, and they exist in any two-body system. Lagrange points will be generalized to be between any two masses $M_1$ and $M_2$, some distance $R$ apart.
 
-The most interesting Lagrange points are the ones that lie on either side of the smaller body along the line extending between both. These are known as L1 (in the Earth-moon system, between Earth and the moon), and L2 (on the opposite side of the moon as Earth). The Lagrange points can be found analytically. To make calculations easier, it will be assumed that $M_2<<M_1$, so that $M_2$ orbits about $M_1$'s center of mass, with $M_1$'s inertial acceleration being negligible.
+The most interesting Lagrange points are the ones that lie along the line extending between the earth and the moon. These are known as L1 (in the Earth-moon system, between Earth and the moon), and L2 (on the opposite side of the moon as Earth), and L3 (opposite to the moon from Earth). The Lagrange points can be found analytically, however L4 and L5 are slightly more complicated and will require further exploration. To make calculations easier, it will be assumed that $M_2<<M_1$, so that $M_2$ orbits about $M_1$'s center of mass, with $M_1$'s inertial acceleration being negligible.
 
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}[>=latex]
-        \filldraw[] (0,0) circle (5pt) node[above] {$M_1$};
-        \filldraw[] (4,0) circle (3pt) node[above] {$M_2$};
-        \filldraw[] (3,0) circle (1pt) node[above] {$L1$};
-        \filldraw[] (5,0) circle (1pt) node[above] {$L2$};
-%        \node[circle, fill=white, draw=gray] at (0,0) {$M_1$};
-%        \node[circle, fill=white, draw=gray] at (3,0) {$M_2$};
+ %\filldraw[] (0,0) circle (5pt) node[above] {$M_1$};
+ %\filldraw[] (4,0) circle (3pt) node[above] {$M_2$};
+ \filldraw[] (4,0) circle (1pt) node[above] {$L1$};
+ \filldraw[] (6,0) circle (1pt) node[above] {$L2$};
+ \filldraw[] (-5,0) circle (1pt) node[above] {$L3$};
+ \node[circle, fill=white, draw=gray] at (0,0) {\small{$M_1$}};
+ \node[circle, fill=white, draw=gray] at (5,0) {\tiny{$M_2$}};
 
     \end{tikzpicture}
     \caption{Locations of L1 and L2 in a system with two masses}\label{fig:Lagrange Points}
 \end{figure}
+
+The L1, L2, and L3 Lagrange points are not stable, in that perturbations will become exacerbated. There are, however, semi-stable orbits about the L1 and L2 points, many of which have interesting characteristics and trajectories. Exploration of Lagrange point stability and trajectories around Lagrange points is far outside the scope of this paper, however some search terms for an interested reader are "Halo orbit", ""Lissajous orbit", and "Near-rectilinear halo orbit".
+
+The other three Lagrange points are also 
 
 \subsubsection{L1 Lagrange Point}
 
@@ -44,28 +64,28 @@ $$\st{\vv{F}}{net}=m\vv{a}$$
 To use the Transport Theorem (see Section \ref{Sec:Motion}) to find the required inertial acceleration $\vv{a}$ in the above equation, the angular velocity $\omega$ of the smaller body (in the Earth-moon system, this would be the moon) must be found. $\omega$ can be expressed as the velocity divided by the radius. $V$ denotes the velocity of $M_2$ about $M_1$ at their distance $R$ apart. Recall circular velocity from Equation \eqref{Circular Velocity}.
 
 \begin{align*}
-    \omega&=\frac{V}{R}\\
-    \omega&=\frac{\sqrt{\mu/R}}{R}\\
-    \omega&=\sqrt{\frac{\mu}{R^3}}\\
+    \omega & =\frac{V}{R}  \\
+    \omega & =\frac{\sqrt{\mu/R}}{R} \\
+    \omega & =\sqrt{\frac{\mu}{R^3}} \\
 \end{align*}
 
 With this calculated, the required polar acceleration can be calculated. The satellite's orbital radius about $M_1$ is $r$
 
 \begin{align*}
-    \vv{v}^{r\theta{}n}&=\frac{d^{xyz}}{dt}{\vv{r}^{r\theta{}n}}+\prescript{xyz}{}{\omega}^{r\theta{}n}\times{}\vv{r}^{r\theta{}n}\\
-    &=\frac{d^{xyz}}{dt}{r\hat{u}_r}+\sqrt{\frac{\mu}{R^3}}\hat{u}_n\times r\hat{u}_r\\
-    &=\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_\theta\\
+    \vv{v}^{r\theta{}n} & =\frac{d^{xyz}}{dt}{\vv{r}^{r\theta{}n}}+\prescript{xyz}{}{\omega}^{r\theta{}n}\times{}\vv{r}^{r\theta{}n} \\
+    & =\frac{d^{xyz}}{dt}{r\hat{u}_r}+\sqrt{\frac{\mu}{R^3}}\hat{u}_n\times r\hat{u}_r\\
+    & =\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_\theta \\
 \end{align*}
 
 This can be differentiated to find acceleration
 
 \begin{align*}
-    \vv{a}^{r\theta{}n}&=\frac{d^{xyz}}{dt}{\vv{v}^{r\theta{}n}}+\prescript{xyz}{}{\omega}^{r\theta{}n}\times{}\vv{v}^{r\theta{}n}\\
-    &=\frac{d^{xyz}}{dt}\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_\theta+\sqrt{\frac{\mu}{R^3}}\hat{u}_n\times \sqrt{\frac{\mu r^2}{R^3}}\hat{r}_\theta\\
-    &=-\sqrt{\frac{\mu}{R^3}}\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_n\\
-    &=-\sqrt{\frac{\mu^2 r^2}{R^6}}\hat{r}_n\\
-    &=-\frac{\mu r}{R^3}\hat{r}_n\\
-    &=-\frac{GM_1r}{R^3}\hat{r}_n\\
+    \vv{a}^{r\theta{}n} & =\frac{d^{xyz}}{dt}{\vv{v}^{r\theta{}n}}+\prescript{xyz}{}{\omega}^{r\theta{}n}\times{}\vv{v}^{r\theta{}n}   \\
+    & =\frac{d^{xyz}}{dt}\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_\theta+\sqrt{\frac{\mu}{R^3}}\hat{u}_n\times \sqrt{\frac{\mu r^2}{R^3}}\hat{r}_\theta \\
+    & =-\sqrt{\frac{\mu}{R^3}}\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_n\\
+    & =-\sqrt{\frac{\mu^2 r^2}{R^6}}\hat{r}_n\\
+    & =-\frac{\mu r}{R^3}\hat{r}_n \\
+    & =-\frac{GM_1r}{R^3}\hat{r}_n \\
 \end{align*}
 
 The polar acceleration on the satellite for it to maintain its orbit is
@@ -78,45 +98,78 @@ $$a_g=\frac{GM_i}{d^2}\hat{u}_{n,i}$$
 
 Where $\mu$ has been replaced with $GM$, and $d$ is the distance to the body. The direction of the acceleration is toward the attracting body. At $L1$, $M_2$ will provide radially outward acceleration while $M_1$ will provide radially inward acceleration. An equation can now be set up to find $r_{L1}$.
 \begin{align*}
-    a_1+a_2&=\st{a}{net}\\
-    -\frac{GM_1}{(r_{L1})^2}+\frac{GM_2}{(R-r_{L1})^2} &= -\frac{\mu_1 r_{L1}}{R^3}\\
-    -\frac{GM_1}{R^2\left(\frac{r_{L1}}{R}\right)^2}+\frac{GM_2}{R^2(1-\frac{r_{L1}}{R})^2} &= -\frac{GM_1 R\frac{r_{L1}}{R}}{R^3}\\
-    -\frac{M_1}{\left(\frac{r_{L1}}{R}\right)^2}+\frac{M_2}{(1-\frac{r_{L1}}{R})^2} &= -M_1\frac{r_{L1}}{R}\\
-    M_1\left(\frac{r_{L1}}{R}\right)^3\left(1-\frac{r_{L1}}{R}\right)^2-M_1\left(1-\frac{r_{L1}}{R}\right)^2+M_2\left(\frac{r_{L1}}{R}\right)^2 &= 0\\
-    M_1\left(\left(\frac{r_{L1}}{R}\right)^3-2\left(\frac{r_{L1}}{R}\right)^4+\left(\frac{r_{L1}}{R}\right)^5\right)+M_1\left(-1+2\left(\frac{r_{L1}}{R}\right)-\left(\frac{r_{L1}}{R}\right)^2\right)+M_2\left(\frac{r_{L1}}{R}\right)^2 &= 0\\
-    M_1\left(\frac{r_{L1}}{R}\right)^5-2M_1\left(\frac{r_{L1}}{R}\right)^4+M_1\left(\frac{r_{L1}}{R}\right)^3+(M_2-M_1)\left(\frac{r_{L1}}{R}\right)^2+2M_1\left(\frac{r_{L1}}{R}\right)-M_1&= 0\\
+    a_1+a_2   & =\st{a}{net} \\
+    -\frac{GM_1}{(r_{L1})^2}+\frac{GM_2}{(R-r_{L1})^2}& = -\frac{\mu_1 r_{L1}}{R^3} \\
+    -\frac{GM_1}{R^2\left(\frac{r_{L1}}{R}\right)^2}+\frac{GM_2}{R^2(1-\frac{r_{L1}}{R})^2}   & = -\frac{GM_1 R\frac{r_{L1}}{R}}{R^3} \\
+    -\frac{M_1}{\left(\frac{r_{L1}}{R}\right)^2}+\frac{M_2}{(1-\frac{r_{L1}}{R})^2} & = -M_1\frac{r_{L1}}{R} \\
+    M_1\left(\frac{r_{L1}}{R}\right)^3\left(1-\frac{r_{L1}}{R}\right)^2-M_1\left(1-\frac{r_{L1}}{R}\right)^2+M_2\left(\frac{r_{L1}}{R}\right)^2 & = 0\\
+    M_1\left(\left(\frac{r_{L1}}{R}\right)^3-2\left(\frac{r_{L1}}{R}\right)^4+\left(\frac{r_{L1}}{R}\right)^5\right)+M_1\left(-1+2\left(\frac{r_{L1}}{R}\right)-\left(\frac{r_{L1}}{R}\right)^2\right)+M_2\left(\frac{r_{L1}}{R}\right)^2 & = 0\\
+    M_1\left(\frac{r_{L1}}{R}\right)^5-2M_1\left(\frac{r_{L1}}{R}\right)^4+M_1\left(\frac{r_{L1}}{R}\right)^3+(M_2-M_1)\left(\frac{r_{L1}}{R}\right)^2+2M_1\left(\frac{r_{L1}}{R}\right)-M_1 & = 0\\
 \end{align*}
 
 \begin{equation}\label{L1 Equation}
     \left(\frac{r_{L1}}{R}\right)^5-2\left(\frac{r_{L1}}{R}\right)^4+\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}-1\right)\left(\frac{r_{L1}}{R}\right)^2+2\left(\frac{r_{L1}}{R}\right)-1= 0
 \end{equation}
-This is not solveable analytically, but it can be solved numerically. If the ratio of planetary masses is known, the root of the quintic can be found through numeric methods. 
+This is not solveable analytically, but it can be solved numerically. If the ratio of planetary masses is known, the root of the quintic can be found through numeric methods.
 
 \subsubsection{L2 Lagrange Point}
 
 $L2$ can be found much the same way $L1$ was. The only difference is setup is that now both gravitational forces are attractive toward $M_1$
 
 \begin{align*}
-    a_1+a_2&=\st{a}{net}\\
-    -\frac{GM_1}{(r_{L2})^2}-\frac{GM_2}{(R-r_{L2})^2} &= -\frac{\mu_1 r_{L2}}{R^3}\\
-    \frac{GM_1}{R^2\left(\frac{r_{L2}}{R}\right)^2}+\frac{GM_2}{R^2(1-\frac{r_{L2}}{R})^2} &= \frac{GM_1 R\frac{r_{L2}}{R}}{R^3}\\
-    \frac{M_1}{\left(\frac{r_{L2}}{R}\right)^2}+\frac{M_2}{(1-\frac{r_{L2}}{R})^2} &= M_1\frac{r_{L2}}{R}\\
-    -M_1\left(\frac{r_{L2}}{R}\right)^3\left(1-\frac{r_{L2}}{R}\right)^2+M_1\left(1-\frac{r_{L2}}{R}\right)^2+M_2\left(\frac{r_{L2}}{R}\right)^2 &= 0\\
-    -M_1\left(\left(\frac{r_{L2}}{R}\right)^3-2\left(\frac{r_{L2}}{R}\right)^4+\left(\frac{r_{L2}}{R}\right)^5\right)+M_1\left(1-2\left(\frac{r_{L2}}{R}\right)+\left(\frac{r_{L2}}{R}\right)^2\right)+M_2\left(\frac{r_{L2}}{R}\right)^2 &= 0\\
-    -M_1\left(\frac{r_{L2}}{R}\right)^5+2M_1\left(\frac{r_{L2}}{R}\right)^4-M_1\left(\frac{r_{L2}}{R}\right)^3+(M_2+M_1)\left(\frac{r_{L2}}{R}\right)^2-2M_1\left(\frac{r_{L2}}{R}\right)+M_1&= 0\\
+    a_1+a_2   & =\st{a}{net}\\
+    -\frac{GM_1}{(r_{L2})^2}-\frac{GM_2}{(R-r_{L2})^2}& = -\frac{\mu_1 r_{L2}}{R^3}\\
+    \frac{GM_1}{R^2\left(\frac{r_{L2}}{R}\right)^2}+\frac{GM_2}{R^2(1-\frac{r_{L2}}{R})^2}    & = \frac{GM_1 R\frac{r_{L2}}{R}}{R^3} \\
+    \frac{M_1}{\left(\frac{r_{L2}}{R}\right)^2}+\frac{M_2}{(1-\frac{r_{L2}}{R})^2}  & = M_1\frac{r_{L2}}{R} \\
+    -M_1\left(\frac{r_{L2}}{R}\right)^3\left(1-\frac{r_{L2}}{R}\right)^2+M_1\left(1-\frac{r_{L2}}{R}\right)^2+M_2\left(\frac{r_{L2}}{R}\right)^2& = 0    \\
+    -M_1\left(\left(\frac{r_{L2}}{R}\right)^3-2\left(\frac{r_{L2}}{R}\right)^4+\left(\frac{r_{L2}}{R}\right)^5\right)+M_1\left(1-2\left(\frac{r_{L2}}{R}\right)+\left(\frac{r_{L2}}{R}\right)^2\right)+M_2\left(\frac{r_{L2}}{R}\right)^2 & = 0    \\
+    -M_1\left(\frac{r_{L2}}{R}\right)^5+2M_1\left(\frac{r_{L2}}{R}\right)^4-M_1\left(\frac{r_{L2}}{R}\right)^3+(M_2+M_1)\left(\frac{r_{L2}}{R}\right)^2-2M_1\left(\frac{r_{L2}}{R}\right)+M_1& = 0    \\
 \end{align*}
 
 \begin{equation}\label{L2 Equation}
     -\left(\frac{r_{L1}}{R}\right)^5+2\left(\frac{r_{L1}}{R}\right)^4-\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}+1\right)\left(\frac{r_{L1}}{R}\right)^2-2\left(\frac{r_{L1}}{R}\right)+1= 0
 \end{equation}
-This is not solveable analytically, but it can be solved numerically. If the ratio of planetary masses is known, the root of the quintic can be found through numeric methods. 
+This is not solveable analytically, but it can be solved numerically. If the ratio of planetary masses is known, the root of the quintic can be found through numeric methods.
 
-\bigskip\bigskip
-\subsection{Time over the Horizon (WIP)}
+\subsubsection{L3 Lagrange Point}
 
-% TODO https://www.desmos.com/calculator/kyyuqzonoy, add rotation of the planet
+L3 will be found the same way as L2, but the denominator of $M_2$'s attractive force changes.
+
+\begin{align*}
+    a_1+a_2   & =\st{a}{net}\\
+    -\frac{GM_1}{(r_{L3})^2}-\frac{GM_2}{(R+r_{L3})^2}& = -\frac{\mu_1 r_{L3}}{R^3}\\
+    \frac{GM_1}{R^2\left(\frac{r_{L3}}{R}\right)^2}+\frac{GM_2}{R^2(1+\frac{r_{L3}}{R})^2}    & = \frac{GM_1 R\frac{r_{L3}}{R}}{R^3} \\
+    \frac{M_1}{\left(\frac{r_{L3}}{R}\right)^2}+\frac{M_2}{(1+\frac{r_{L3}}{R})^2}  & = M_1\frac{r_{L3}}{R} \\
+    -M_1\left(\frac{r_{L3}}{R}\right)^3\left(1+\frac{r_{L3}}{R}\right)^2+M_1\left(1+\frac{r_{L3}}{R}\right)^2+M_2\left(\frac{r_{L3}}{R}\right)^2& = 0    \\
+    -M_1\left(\left(\frac{r_{L3}}{R}\right)^3+2\left(\frac{r_{L3}}{R}\right)^4+\left(\frac{r_{L3}}{R}\right)^5\right)+M_1\left(1+2\left(\frac{r_{L3}}{R}\right)+\left(\frac{r_{L3}}{R}\right)^2\right)+M_2\left(\frac{r_{L3}}{R}\right)^2 & = 0    \\
+    -M_1\left(\frac{r_{L3}}{R}\right)^5-2M_1\left(\frac{r_{L3}}{R}\right)^4-M_1\left(\frac{r_{L3}}{R}\right)^3+(M_2+M_1)\left(\frac{r_{L3}}{R}\right)^2+2M_1\left(\frac{r_{L3}}{R}\right)+M_1& = 0    \\
+\end{align*}
+
+\begin{equation}\label{L3 Equation}
+    -\left(\frac{r_{L1}}{R}\right)^5-2\left(\frac{r_{L1}}{R}\right)^4-\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}+1\right)\left(\frac{r_{L1}}{R}\right)^2+2\left(\frac{r_{L1}}{R}\right)+1= 0
+\end{equation}
+
+As with the other two Lagrange points, this can be solved numerically.
+
 
 \bigskip\bigskip
 \subsection{Conclusion}
+
+The radius of a synchronous orbit about a planet can be found using the sidereal period $T$ of the planet
+$$r=\sqrt[3]{\frac{\mu T^2}{4\pi^2}}$$
+
+For Lagrange points L1, L2, and L3 respectively, the distance from the larger of the two masses can be found through numerical solving
+
+$$\left(\frac{r_{L1}}{R}\right)^5-2\left(\frac{r_{L1}}{R}\right)^4+\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}-1\right)\left(\frac{r_{L1}}{R}\right)^2+2\left(\frac{r_{L1}}{R}\right)-1=0$$
+
+For L1,
+
+$$-\left(\frac{r_{L1}}{R}\right)^5+2\left(\frac{r_{L1}}{R}\right)^4-\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}+1\right)\left(\frac{r_{L1}}{R}\right)^2-2\left(\frac{r_{L1}}{R}\right)+1= 0$$
+
+For L2, and
+
+$$-\left(\frac{r_{L1}}{R}\right)^5-2\left(\frac{r_{L1}}{R}\right)^4-\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}+1\right)\left(\frac{r_{L1}}{R}\right)^2+2\left(\frac{r_{L1}}{R}\right)+1= 0$$
+
+For L3.
 
 \end{document}
