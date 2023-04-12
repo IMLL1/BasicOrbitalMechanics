@@ -300,6 +300,7 @@ The eccentricity to maximize $\Delta V$ of a gravity assist is $e=2$. Equation \
 
 The term "gravity assist" is possibly a bit of a misnomer, as the gravity serves only to redirect the velocity of the spacecraft, but does not change its magnitude. A spacecraft can be accelerated in its orbit by a planet if it passes behind the planet. Really what's happening is the spacecraft is using the planet's mass to redirect its speed, resulting in a change in the spacecraft's orbit. A well-timed flyby can act to change the velocity of the spacecraft in many different directions. From equation \eqref{Gravity Assist Delta V}, it can be seen that $\Delta V$ is maximized by minimizing $\st{r}{pe}$ and bringing $v_\infty$ as close as possible to $\sqrt{\frac{\mu_p}{\st{r}{pe}}}$. At this value for $v_\infty$, $\Delta V = \sqrt{\frac{\mu_p}{\st{r}{pe}}}$ and the hyperbola will have an eccentricity of $e=2$. It can also be seen that the greater the mass of the planet (and therefore $\mu$), the larger the effect will be. Another way of stating this is that to maximize the effect of a gravity assist, the hyperbolic trajectory should maximize its change in direction, which means minimizing its eccentricity (provided the eccentricity is greater than one). From Equation \eqref{Hyperbolic Flyby Eccentricity}, it can be seen that this entails minimizing $\st{r}{pe}$ for any given $v_\infty$.
 
+\bigskip\bigskip
 \subsection{Patched Conic Approximation}\label{Patched Conics}
 
 So far, the assumption has been made that a satellite has, at any moment, only one gravitational attractor. This leads to convenient results, such as conic section trajectories and simple analytical expressions for position, velocity, and the like. This approximation falls apart when dealing with orbits in which multiple bodies are referenced. The patched conic approximation is one in which you view each body as having its own "sphere of influence", and neglect the gravitational effect of all bodies aside from the one whose sphere of influence a spacecraft is in. Its name eludes to the patching together Keplarian trajectories about different bodies into a continuous set of conic sections.
@@ -310,7 +311,7 @@ While the actual mission consisted of only three trajectories, a total of 7 coni
 
 The conic section shape of a trajectory comes from single-gravitational-attractor systems (note that Equation \eqref{Differential Equation} assumed a single gravitational attractor). To approximate the trajectory as a series of conic sections, all other gravitational influences aside from that of the primary reference must be neglected. Therefore, to approximate a trajectory as a series of patched conic sections, an approximation must be made that at any point there is only one gravitational influence on a spacecraft. Because the vast majority of the time in this interplanetary trajectory is spent under primarily the influence of the sun, with only brief interludes of Terran, Jupiterian, and Saturnian gravity, the approximation proves largely valid. The exact construction of spheres of influence varies by application and publication. The radius of a sphere of influence generally depends on the mass of a body, the mass of its parent body, and the separation of the two bodies.
 
-%TODO: Lagrange Points
+While the patched conics approximation is only an approximation, and has its flaws, it it a necessary approximation in order to generate trajectories analytically. Much research has been done on the n-body problem (that is to say, the problem of finding trajectories under multiple gravitational influences), with the unfortunate conclusion being that it is not possible to calculate with analytical methods the trajectory of a spacecraft under more than one gravitational influence. The only alternative, therefore, to the patched conics approximation is to numerically integrate gravitational acceleration.
 
 \bigskip\bigskip
 \subsection{Conclusion}
@@ -326,5 +327,7 @@ $$v_{\infty,\text{best}}=\sqrt{\frac{\mu_p}{\st{r}{pe}}}=\st{v}{circ@pe}$$
 
 Yielding a $\Delta V$ of
 $$\st{v}{assist,best} = \sqrt{\frac{\mu_p}{\st{r}{pe}}}$$
+
+The patched conic approximation allows trajectories to be calculated between multiple bodies easily, without requiring the use of numerical integration. While the approximation does not hold for all instances, it is generally a helpful tool for $\Delta V$ and trajectory approximation.
 
 \end{document}
