@@ -65,31 +65,51 @@ This can be differentiated to find acceleration
     &=-\sqrt{\frac{\mu}{R^3}}\sqrt{\frac{\mu r^2}{R^3}}\hat{r}_n\\
     &=-\sqrt{\frac{\mu^2 r^2}{R^6}}\hat{r}_n\\
     &=-\frac{\mu r}{R^3}\hat{r}_n\\
+    &=-\frac{GM_1r}{R^3}\hat{r}_n\\
 \end{align*}
 
 The polar acceleration on the satellite for it to maintain its orbit is
 
-$$\st{\vv{a}}{polar}=-\frac{\mu r}{R^3}\hat{r}_n$$
+$$\st{\vv{a}}{polar}=-\frac{GM_1r}{R^3}\hat{r}_n$$
 
-From Equation \eqref{Gravity} (and Newton's second law), the polar acceleration of gravity in the radial direction is
-$$a_g=\frac{GM}{d^2}$$
+Where the normal vector is in reference to $M_1$ (for a point between the two masses, $\hat{r}_{n1}=-\hat{r}_{n2}$). From Equation \eqref{Gravity} (and Newton's second law), the polar acceleration of gravity in the radial direction is
 
-Where $\mu$ has been replaced with $GM$, and $d$ is the distance to the body. The direction of the acceleration is toward the attracting body. At $L1$, $M_2$ will provide radially outward acceleration while $M_1$ will provide radially inward acceleration. An equation can now be set up to find $\alpha_{r1}$, the ratio of distance between $L1$ and $M_1$ and that of $M_1$ and $M_2$ (in other words, $\alpha_{L1}=r/R$).
+$$a_g=\frac{GM_i}{d^2}\hat{u}_{n,i}$$
+
+Where $\mu$ has been replaced with $GM$, and $d$ is the distance to the body. The direction of the acceleration is toward the attracting body. At $L1$, $M_2$ will provide radially outward acceleration while $M_1$ will provide radially inward acceleration. An equation can now be set up to find $r_{L1}$.
 \begin{align*}
     a_1+a_2&=\st{a}{net}\\
-    -\frac{GM_1}{(R\alpha_{L1})^2}+\frac{GM_2}{(R(1-\alpha_{L1}))^2} &= -\frac{\mu_1 r}{R^3}\\
-    -\frac{GM_1}{(R\alpha_{L1})^2}+\frac{GM_2}{(R(1-\alpha_{L1}))^2} &= -\frac{GM_1 R\alpha_{L1}}{R^3}\\
-    -\frac{M_1}{\alpha_{L1}^2}+\frac{M_2}{(1-\alpha_{L1})^2} &= -M_1\alpha_{L1}\\
-    -M_1(1-\alpha_{L1})^2+M_2\alpha_{L1}^2 &= -M_1\alpha_{L1}^3(1-\alpha_{L1})^2\\
-    M_1\alpha_{L1}^3(1-\alpha_{L1})^2-M_1(1-\alpha_{L1})^2+M_2\alpha_{L1}^2 &= 0\\
-    M_1(\alpha_{L1}^3-2\alpha_{L1}^4+\alpha_{L1}^5)+M_1(-1+2\alpha_{L1}-\alpha_{L1}^2)+M_2\alpha_{L1}^2 &= 0\\
-    M_1\alpha_{L1}^5-2M_1\alpha_{L1}^4+M_1\alpha_{L1}^3+(M_2-M_1)\alpha_{L1}^2+2M_1\alpha_{L1}-M_1&= 0\\
+    -\frac{GM_1}{(r_{L1})^2}+\frac{GM_2}{(R-r_{L1})^2} &= -\frac{\mu_1 r_{L1}}{R^3}\\
+    -\frac{GM_1}{R^2\left(\frac{r_{L1}}{R}\right)^2}+\frac{GM_2}{R^2(1-\frac{r_{L1}}{R})^2} &= -\frac{GM_1 R\frac{r_{L1}}{R}}{R^3}\\
+    -\frac{M_1}{\left(\frac{r_{L1}}{R}\right)^2}+\frac{M_2}{(1-\frac{r_{L1}}{R})^2} &= -M_1\frac{r_{L1}}{R}\\
+    M_1\left(\frac{r_{L1}}{R}\right)^3\left(1-\frac{r_{L1}}{R}\right)^2-M_1\left(1-\frac{r_{L1}}{R}\right)^2+M_2\left(\frac{r_{L1}}{R}\right)^2 &= 0\\
+    M_1\left(\left(\frac{r_{L1}}{R}\right)^3-2\left(\frac{r_{L1}}{R}\right)^4+\left(\frac{r_{L1}}{R}\right)^5\right)+M_1\left(-1+2\left(\frac{r_{L1}}{R}\right)-\left(\frac{r_{L1}}{R}\right)^2\right)+M_2\left(\frac{r_{L1}}{R}\right)^2 &= 0\\
+    M_1\left(\frac{r_{L1}}{R}\right)^5-2M_1\left(\frac{r_{L1}}{R}\right)^4+M_1\left(\frac{r_{L1}}{R}\right)^3+(M_2-M_1)\left(\frac{r_{L1}}{R}\right)^2+2M_1\left(\frac{r_{L1}}{R}\right)-M_1&= 0\\
 \end{align*}
 
-This is not solveable analytically, but it can be solved numerically. The entire expression will be divided by $M_1$ to make it simpler.
 \begin{equation}\label{L1 Equation}
-    \left(\frac{r_{L1}}{R}\right)^5-2\left(\frac{r_{L1}}{R}\right)^4+M_1\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}-1\right)\left(\frac{r_{L1}}{R}\right)^2+2\left(\frac{r_{L1}}{R}\right)-1= 0
+    \left(\frac{r_{L1}}{R}\right)^5-2\left(\frac{r_{L1}}{R}\right)^4+\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}-1\right)\left(\frac{r_{L1}}{R}\right)^2+2\left(\frac{r_{L1}}{R}\right)-1= 0
 \end{equation}
+This is not solveable analytically, but it can be solved numerically. If the ratio of planetary masses is known, the root of the quintic can be found through numeric methods. 
+
+\subsubsection{L2 Lagrange Point}
+
+$L2$ can be found much the same way $L1$ was. The only difference is setup is that now both gravitational forces are attractive toward $M_1$
+
+\begin{align*}
+    a_1+a_2&=\st{a}{net}\\
+    -\frac{GM_1}{(r_{L2})^2}-\frac{GM_2}{(R-r_{L2})^2} &= -\frac{\mu_1 r_{L2}}{R^3}\\
+    \frac{GM_1}{R^2\left(\frac{r_{L2}}{R}\right)^2}+\frac{GM_2}{R^2(1-\frac{r_{L2}}{R})^2} &= \frac{GM_1 R\frac{r_{L2}}{R}}{R^3}\\
+    \frac{M_1}{\left(\frac{r_{L2}}{R}\right)^2}+\frac{M_2}{(1-\frac{r_{L2}}{R})^2} &= M_1\frac{r_{L2}}{R}\\
+    -M_1\left(\frac{r_{L2}}{R}\right)^3\left(1-\frac{r_{L2}}{R}\right)^2+M_1\left(1-\frac{r_{L2}}{R}\right)^2+M_2\left(\frac{r_{L2}}{R}\right)^2 &= 0\\
+    -M_1\left(\left(\frac{r_{L2}}{R}\right)^3-2\left(\frac{r_{L2}}{R}\right)^4+\left(\frac{r_{L2}}{R}\right)^5\right)+M_1\left(1-2\left(\frac{r_{L2}}{R}\right)+\left(\frac{r_{L2}}{R}\right)^2\right)+M_2\left(\frac{r_{L2}}{R}\right)^2 &= 0\\
+    -M_1\left(\frac{r_{L2}}{R}\right)^5+2M_1\left(\frac{r_{L2}}{R}\right)^4-M_1\left(\frac{r_{L2}}{R}\right)^3+(M_2+M_1)\left(\frac{r_{L2}}{R}\right)^2-2M_1\left(\frac{r_{L2}}{R}\right)+M_1&= 0\\
+\end{align*}
+
+\begin{equation}\label{L2 Equation}
+    -\left(\frac{r_{L1}}{R}\right)^5+2\left(\frac{r_{L1}}{R}\right)^4-\left(\frac{r_{L1}}{R}\right)^3+\left(\frac{M_2}{M_1}+1\right)\left(\frac{r_{L1}}{R}\right)^2-2\left(\frac{r_{L1}}{R}\right)+1= 0
+\end{equation}
+This is not solveable analytically, but it can be solved numerically. If the ratio of planetary masses is known, the root of the quintic can be found through numeric methods. 
 
 \bigskip\bigskip
 \subsection{Time over the Horizon (WIP)}
