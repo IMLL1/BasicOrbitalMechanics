@@ -1,0 +1,13 @@
+\documentclass[../basicOrbitalDynamics.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+
+So far, the restricted 2-body problem has been the only case examined. The problems are 2-body in that all but two bodies are neglected at any moment. The entire motivation for patched conics (Section \ref{sec:Patched Conics}) was to enable the study of trajectories going between celestial bodies while neglecting all but one gravitational influence. The term "restricted" refers to the simplified nature of the problem, in which we not only neglect all forces on a satellite aside from that of the body it's orbiting, but we also neglect the impact of the satellite's gravitational influence on the planet. Generally speaking, this approximation is valid; a 1,000 kilogram satellite will not impact a body as vast as even the smallest moons. However, when analyzing the motion of celestial bodies, this approximation may not be valid; the moon's effect on Earth is certainly smaller than that of Earth on the moon, but it is not negligible. 
+
+General two-body motion \textit{does} have analytic solutions, however those will not be explored in this document. Furthermore, restricted three-body motion has analytic solutions as well. While the Lagrange points calculated in Section \ref{sec:Lagrange Points} were calculated neglecting the effect of $M_2$ on $M_1$, L1, L2, and L3 can be calculated without neglecting the effect on $M_1$ of $M_2$, and in fact the remaining two Lagrane points require consideration of the gravitational influences of both bodies on eachother.
+
+The $n$-body problem does not have analytic solutions (there is no way to analytically determine the unrestrained trajectory of a body in 3-body, 4-body, or any generalized $n$-body motion), so it will not be analyzed in great detail. For any multibody motion, all bodies will orbit the shared center of mass of the system, known as the barycenter.
+
+Consideration of the full unrestricted $n$-body problem allows for incredibly sophisticated trajectories, but is solveable only with numeric integration.
+
+\end{document}
