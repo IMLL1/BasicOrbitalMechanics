@@ -28,7 +28,7 @@
 \newcommand{\st}[2]{{#1}_\text{#2}} % latin subscript
 
 \usepackage{subfiles} % Best loaded last in the preamble
-\allowdisplaybreaks
+\allowdisplaybreaks{}
 
 \title{Elementary Orbital Mechanics}
 \author{(Removed for Internet Anonymity)\\Purdue University, School of Aeronautics and Astronautics}
@@ -38,7 +38,7 @@
 
 \maketitle
 
-There are many publications that purportedly cover the basics of astrodynamics and orbital mechanics, and many even claim to be catered to an uninitiated audience. However, many of them take for granted some prior knowledge of orbital mechanics, and neglect the ever-important step of ensuring that the reader can follow \textit{every} step of the process. This document intends to rectify this by covering the basics of orbital dynamics, from derivations of orbital motion to complex orbital maneuvers, while ensuring the reader can follow every step. This means algebraic steps are shown, motivations are discussed (where possible) instead of completing procedures seemingly out of the blue, and conclusions are summarized. It is reccomended that the reader view the appendix first, to get a sense for some terminology that is used throughout this document. Note that this document examines exclusively the restricted two-body problem; the impact of an orbiting body on the orbited body is neglected entirely, meaning that the orbited body has no inertial acceleration. While much of this was derived without inspiration, citations are provided for sections where ideas were drawn from specific publications. This was written after having skimmed Fundamentals of Astrodynamics \cite{Bate_Mueller_White_1971}, so even where no citations are provided, complete intellectual independence cannot be claimed.
+There are many publications that purportedly cover the basics of astrodynamics and orbital mechanics, and many even claim to be catered to an uninitiated audience. However, many of them take for granted some prior knowledge of orbital mechanics, and neglect the ever-important step of ensuring that the reader can follow \textit{every} step of the process, with no hand waving and no relying on intuition. This document intends to rectify this by covering the basics of orbital dynamics, from derivations of orbital motion to complex orbital maneuvers, while ensuring the reader can follow every step. This means algebraic steps are shown, motivations are discussed (where possible) instead of completing procedures seemingly out of the blue, and conclusions are summarized. It is reccomended that the reader view the appendix first, to get a sense for some terminology that is used throughout this document. Note that this document examines exclusively simple Keplerian orbital dynamics; reciprocity of force, perturbations, trajectory optimization, and the like require much more extensive attention than will be given in this document. While much of this was derived without inspiration, citations are provided for sections where ideas were drawn from specific publications. This was written after having skimmed Fundamentals of Astrodynamics\cite{Bate_Mueller_White_1971}, so even where no citations are provided, complete intellectual independence cannot be claimed.
 
 \pagebreak
 \tableofcontents
