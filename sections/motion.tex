@@ -33,7 +33,7 @@ This expression can now reorganized. The motivation of this is to allow the setu
 This can also all be calculated using the Transport Theorem (or Basic Kinematic Equation) so that it is more generalized to allow for inclined orbits. The Transport Theorem allows differentiation in the basis frame of a vector $\vv{u}$ expressed in the polar frame. The polar frame will be defined with basis vectors $\hat{u}_r$ (pointing to the satellite), $\hat{u}_\theta$ (perpendicular to $\hat{r}$ in the general direction of orbit, and in plane with the orbit), and $\hat{u}_n$ (normal to the orbit and in line with the right-hand-rule such that $\hat{u}_r\times\hat{u}_\theta=\hat{u}_n$). This basis frame has basis vectors $\hat{x}$, $\hat{y}$, and $\hat{z}$. The polar frame is rotating counterclockwise (as viewed from the $+\hat{u}_n$ direction looking down) at an angular velocity of $\prescript{b}{}{\omega}^{p}=\dot{\theta}\hat{u}_n$. Note that $\hat{u}_n$ is not necessarily in the direction of $\hat{z}$ See Figures \ref{fig:Coordinate System} and \ref{fig:Coordinate System 3D}.
 
 The transport theorem states that
-$$\frac{d^{xyz}}{dt}{\vv{V}^{r\theta{}n}}=\frac{d^{r\theta n}}{dt}{\vv{V}^{r\theta{}n}}+\prescript{xyz}{}{\omega}^{r\theta{}n}\times{}\vv{V}^{r\theta{}n}$$
+\[\frac{d^{xyz}}{dt}{\vv{V}^{r\theta{}n}}=\frac{d^{r\theta n}}{dt}{\vv{V}^{r\theta{}n}}+\prescript{xyz}{}{\omega}^{r\theta{}n}\times{}\vv{V}^{r\theta{}n}\]
 where $\vv{V}^{r\theta{}n}$ denotes the vector $\vv{V}$ expressed in the polar frame, $\frac{d^{xyz}}{dt}$ and $\frac{d^{r\theta{}n}}{dt}$ denote the time derivatives in the basis and polar frames respectively, and $\prescript{xyz}{}{\omega}^{r\theta{}n}$ denotes the angular velocity of the polar frame in basis frame.
 
 \begin{align*}
@@ -68,7 +68,7 @@ To summarize the findings from this section:
 Before any orbital parameters can be defined, basic equations describing orbits must be found. The radial nature at which gravity acts lends itself quite well to polar expression, so this process will begin with expression of motion in polar coordinates
 
 Sir Isaac Newton's equation of gravity (replacing the product $GM$ with $\mu$ by convention) is
-$$\vv{F}=\frac{-\mu{}m}{r^2}\hat{r}$$
+\[\vv{F}=\frac{-\mu{}m}{r^2}\hat{r}\]
 
 This can be expressed easily in the polar frame as
 \begin{equation}\label{Gravity}
@@ -99,7 +99,7 @@ The formation of these differential equations allows for a solution to be found.
 \subsection{Conservation of Angular Momentum}
 
 This brief interruption from pure calculus and differential equations, while sudden, will prove quite useful soon. For reasons that will become apparent in future sections, conservation of angular momentum must be proven. Torque causes change in angular momentum. A satellites angular momentum can therefore only be changed by forces acting along some vector that is not parallel to the displacement vector of the satellite from the orbited body. The only force applied to the satellite is gravity, which acts along that vector. From this physical reasoning, angular momentum is constant. However, this can also be determined mathematically. Instead of looking at total angular momentum which is defined as
-$$L=|\vv{r}\times\vv{p}|$$
+\[L=|\vv{r}\times\vv{p}|\]
 
 This section will analyze \textit{specific} angular momentum, which is defined as
 \begin{align*}
@@ -117,7 +117,7 @@ This equation will be rewritten here for future use
 \end{equation}
 
 Note for future derivations that \eqref{Angular Momentum:h unknown} can be rewritten as
-$$\dot{\theta}=\frac{h}{r^2}$$
+\[\dot{\theta}=\frac{h}{r^2}\]
 Angular momentum can be differentiated to prove conservation
 \begin{align*}
     \dot{h} & =(r^2\dot{\theta})^\prime                 \\
@@ -133,10 +133,10 @@ With a derivative of zero, angular momentum must be conserved
 \subsection{Differential Equations Solution}
 
 We now return to the set of differential equations (Equations \eqref{Differential Equation:r} and \eqref{Differential Equation:theta})
-$$\ddot{r}-r\dot{\theta}^2=\frac{-\mu}{r^2} \qquad\qquad 2\dot{r}\dot{\theta}+r\ddot{\theta}=0$$
+\[\ddot{r}-r\dot{\theta}^2=\frac{-\mu}{r^2} \qquad\qquad 2\dot{r}\dot{\theta}+r\ddot{\theta}=0\]
 
 These differential equations, however, are not independently solvable. This differential equation will instead be solved for $r$ in terms of $\theta$. While the current differential equation describes $r$ and $\theta$ both in terms of $t$, the switch must now be made to a time-invariant approach to express independent variable $r$ in terms of dependant variable $\theta$.
-$$\frac{dr}{d\theta{}}=\frac{dr/dt}{d\theta{}/dt}=\frac{\dot{r}}{\dot{\theta}}$$
+\[\frac{dr}{d\theta{}}=\frac{dr/dt}{d\theta{}/dt}=\frac{\dot{r}}{\dot{\theta}}\]
 
 So far, there is no formula for $\dot{r}$ or $\dot{\theta}$, so a substitution must be made.
 \begin{align*}
@@ -167,10 +167,10 @@ Returning now to the differential equations, there are now enough equations to a
 \end{align*}
 
 This is a non homogeneous second-order differential equation. The homogeneous solution is
-$$u_h(\theta)=\cos(\theta-\omega)$$
+\[u_h(\theta)=\cos(\theta-\omega)\]
 
 While the specific solution is
-$$u_s(\theta)=\frac{\mu}{h^2}$$
+\[u_s(\theta)=\frac{\mu}{h^2}\]
 
 The solution to the differential equation is therefore
 \begin{align*}

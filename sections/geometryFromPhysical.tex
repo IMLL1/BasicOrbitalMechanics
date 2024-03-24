@@ -7,8 +7,8 @@ A plausible scenario for a spacecraft is that telemetry systems provide a distan
 \bigskip\bigskip
 \subsection{Orbit Shape}
 
-Many parameters will depend on the type of orbit that a satellite is in. As such, an easy way of determining this must be found. Section \ref{sec:Specific Energy}, specifically Equation \eqref{Specific Energy Physical} defined specific energy to be
-$$\varepsilon=\frac{1}{2}v^2-\frac{\mu}{r}$$
+Many parameters will depend on the type of orbit that a satellite is in. As such, an easy way of determining this must be found. Section~\ref{sec:Specific Energy}, specifically Equation~\eqref{Specific Energy Physical} defined specific energy to be
+\[\varepsilon=\frac{1}{2}v^2-\frac{\mu}{r}\]
 
 For an orbit to be hyperbolic, the satellite must be able to approach infinite distance from the orbited body, with the velocity always remaining positive. This means the kinetic energy term must be greater in magnitude than the potential energy term, thus making the specific energy positive. For the orbit to be parabolic, the satellite's velocity will approach zero as its distance approaches infinity. This requires the kinetic and potential energy terms to have the same magnitude, making specific energy zero. For a closed orbit, the satellite cannot approach infinite distance without kinetic energy being negative. This means the kinetic term is less than the potential term, making elliptic orbit specific energy negative. This can be summarized with the following statement
 \begin{equation}\label{Orbit Shape Physical}
@@ -34,7 +34,7 @@ While this may not be immediately useful, it is nonetheless intriguing.
 \bigskip\bigskip
 \subsection{Semi-Major Axis}\label{sec:SMA in Terms of V,R}
 
-If $v$ and $r$ are known, Equation \eqref{Vis-Viva Equation} can be solved for $a$.
+If $v$ and $r$ are known, Equation~\eqref{Vis-Viva Equation} can be solved for $a$.
 
 \begin{align*}
     v                  & = \sqrt{\frac{2\mu}{r}-\frac{\mu}{a}} \\
@@ -81,13 +81,13 @@ An orbit can take one of three shapes. If the velocity is $v<\sqrt{\frac{2\mu}{r
 
 \bigskip
 The semi-major axis $a$ can be found from measured values
-$$a=\frac{\mu r}{2\mu-rv^2}=\frac{\mu}{\st{v}{escape}^2-v^2}$$
+\[a=\frac{\mu r}{2\mu-rv^2}=\frac{\mu}{\st{v}{escape}^2-v^2}\]
 
 \bigskip
 The eccentricity is
-$$e=\sqrt{1-r^2v^2\cos^2(\phi)\frac{2\mu-rv^2}{\mu^2r}}$$
+\[e=\sqrt{1-r^2v^2\cos^2(\phi)\frac{2\mu-rv^2}{\mu^2r}}\]
 
-With the two defining geometric parameters able to be determined from instrumentation readings, equations from Sections \ref{sec:Orbit Geometry} and \ref{sec:Orbital Parameters from Geometry} can be used.
+With the two defining geometric parameters able to be determined from instrumentation readings, equations from Section~\ref{sec:Orbit Geometry} and Section~\ref{sec:Orbital Parameters from Geometry} can be used.
 
 \begin{comment}
 \bigskip\bigskip
@@ -139,7 +139,7 @@ The substitution will now be made that $v_\theta=v\cos(\phi)$
 \end{equation}
 
 A parameter $Q$ will be defined as the square of the ratio between true velocity at any altitude and velocity required for circular orbit at that altitude.
-$$Q=(\frac{v}{\sqrt{\mu/r}})^2=\frac{v^2r}{\mu}$$
+\[Q=(\frac{v}{\sqrt{\mu/r}})^2=\frac{v^2r}{\mu}\]
 
 Solved for $v$, $v=\sqrt{Q\frac{\mu}{r}}$
 
@@ -301,10 +301,10 @@ This shows that the semi-major axis of an orbit is inversely proportional to the
 \subsubsection{Eccentricity}\label{sec:Eccentricity physical}
 
 Recall from Equation \eqref{Angular Momentum Geometric Definition} that
-$$h=\sqrt{a\mu{}(1-e^2)}$$
+\[h=\sqrt{a\mu{}(1-e^2)}\]
 
 Equation \eqref{Angular Momentum Physical Definition} adds that
-$$h=rv_\perp=rv_\theta$$
+\[h=rv_\perp=rv_\theta\]
 
 These can be set equal to eachother and solved for $e$.
 \begin{align*}

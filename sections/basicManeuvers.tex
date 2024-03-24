@@ -5,7 +5,7 @@
 \bigskip\bigskip
 \subsection{Inclination Change}
 
-In Section \ref{sec:Mn Manuever}, maneuvers were done at a constant angle to the velocity vector. However, it is more efficient to transfer to the desired orbit directly by finding the vector difference between the old velocity and the desired velocity. To maximize the effect of such a manuever, it should be done at either the ascending or descending node (such that $\Delta j=\Delta i$).
+In Section~\ref{sec:Mn Manuever}, maneuvers were done at a constant angle to the velocity vector. However, it is more efficient to transfer to the desired orbit directly by finding the vector difference between the old velocity and the desired velocity. To maximize the effect of such a manuever, it should be done at either the ascending or descending node (such that $\Delta j=\Delta i$).
 
 \begin{figure}[H]
     \centering
@@ -122,7 +122,7 @@ Note that both absolute value terms will have the same sign; they will either bo
 
 Note that this equation is the same if $r_1$ and $r_2$ are swapped. Therefore, $\Delta V$ does not depend on the direction of the transfer; a transfer between the same two circular orbits will have the same $\Delta V$ regardless of whether the transfer is from a high orbit to a low one, or from the low orbit to a the higher one.
 
-The time for this transfer is simply half the period of the transfer orbit, which can be calculated using Equation \eqref{Period Geometric}.
+The time for this transfer is simply half the period of the transfer orbit, which can be calculated using Equation~\eqref{Period Geometric}.
 
 \begin{align*}
     t &= \frac{\st{T}{tr}}{2} \\
@@ -139,7 +139,7 @@ Giving us a total transfer time of
 
 \subsubsection{\texorpdfstring{$\Delta V$}{DeltaV} Analysis for Hohmann Transfers}\label{sec:DeltaV analysis for Hohmann}
 
-Equation \eqref{Hohmann Delta V} will be written with $\st{r}{high}=r_2$ and $\st{r}{low}=r_1$. A parameter $\alpha$ is defined as $\alpha=\st{r}{high}/\st{r}{low}$, allowing $\Delta V$ to be made a function of $\alpha$.
+Equation~\eqref{Hohmann Delta V} will be written with $\st{r}{high}=r_2$ and $\st{r}{low}=r_1$. A parameter $\alpha$ is defined as $\alpha=\st{r}{high}/\st{r}{low}$, allowing $\Delta V$ to be made a function of $\alpha$.
 
 \begin{align*}
     \Delta V &= \left|\sqrt{\frac{2\mu{}\st{r}{high}}{\st{r}{low}(\st{r}{low}+\st{r}{high})}}+\sqrt{\frac{\mu}{\st{r}{high}}}-\sqrt{\frac{2\mu{}\st{r}{low}}{\st{r}{high}(\st{r}{low}+\st{r}{high})}}-\sqrt{\frac{\mu}{\st{r}{low}}}\right|\\
@@ -159,7 +159,7 @@ Because $\alpha>1$, the absolute value can vanish as its argument will always be
 
 Notice that the coefficient $\sqrt{\mu/\st{r}{low}}$ is the circular velocity at the low orbit.
 
-By plotting $\Delta V$ against $\alpha$, a trend can be found. From Equation \eqref{Delta V in terms of Alpha Hohmann}, the exact value of $\st{r}{low}$ only scales the plot of $\Delta V(\alpha)$ but does not effect its shape.
+By plotting $\Delta V$ against $\alpha$, a trend can be found. From Equation~\eqref{Delta V in terms of Alpha Hohmann}, the exact value of $\st{r}{low}$ only scales the plot of $\Delta V(\alpha)$ but does not effect its shape.
 \begin{figure}[H]
     \centering
     \def\rootMuOverR{5}
@@ -175,11 +175,11 @@ By plotting $\Delta V$ against $\alpha$, a trend can be found. From Equation \eq
     \caption{Plot of $\Delta V$ vs $\alpha$ with $\st{r}{low}$ held constant}\label{fig:Hohmann Delta V r1 const}
 \end{figure}
 
-It is important to note that the apparent behavior of constant increase is not the true behavior of this function. The function exhibits a maximum at $\alpha\approx15.58172$ (the work for this is not shown, as differentiation of \eqref{Delta V in terms of Alpha Hohmann} is rather tedious, and the roots of the derivative cannot be found analytically), and then exhibits the following limiting behavior
-$$\lim_{\alpha\rightarrow\infty}\Delta V(\alpha, \st{r}{low})=(\sqrt{2}-1)\sqrt{\frac{\mu}{\st{r}{low}}}$$
+It is important to note that the apparent behavior of constant increase is not the true behavior of this function. The function exhibits a maximum at $\alpha\approx15.58172$ (the work for this is not shown, as differentiation of~\eqref{Delta V in terms of Alpha Hohmann} is rather tedious, and the roots of the derivative cannot be found analytically), and then exhibits the following limiting behavior
+\[\lim_{\alpha\rightarrow\infty}\Delta V(\alpha, \st{r}{low})=(\sqrt{2}-1)\sqrt{\frac{\mu}{\st{r}{low}}}\]
 
 %TODO: HOLD rHIGH constant!
-If instead $\alpha$ is held constant, then the relationship between $\st{r}{low}$ and $\Delta V$ can be explored. As can be seen in Equation \eqref{Delta V in terms of Alpha Hohmann}, the value of $\alpha$ does not impact the shape of the plot of $\Delta V(\st{r}{low})$, but instead scales it. The general behavior of $\Delta V(\st{r}{low})$ follows $\st{r}{low}^{-0.5}$.
+If instead $\alpha$ is held constant, then the relationship between $\st{r}{low}$ and $\Delta V$ can be explored. As can be seen in Equation~\eqref{Delta V in terms of Alpha Hohmann}, the value of $\alpha$ does not impact the shape of the plot of $\Delta V(\st{r}{low})$, but instead scales it. The general behavior of $\Delta V(\st{r}{low})$ follows $\st{r}{low}^{-0.5}$.
 
 \begin{figure}[H]
     \centering
@@ -207,7 +207,7 @@ In the above figure, $\Delta V$ is represented by the colors, while the axes cor
 \bigskip\bigskip
 \subsection{Expedited Transfer}
 
-It may at times be the case that the Hohmann Transfer is simply too slow for some applications. If the transfer is from a low orbit to a higher one, then the apoapsis of the transfer orbit can simply be raised higher than the destination orbit. Calculating the $\Delta V$ of such a transfer is elementary, as it requires only application of Equation \eqref{Vis-Viva Equation}. Using Equation \eqref{Time since periapsis}, the transfer time can be evaluated.
+It may at times be the case that the Hohmann Transfer is simply too slow for some applications. If the transfer is from a low orbit to a higher one, then the apoapsis of the transfer orbit can simply be raised higher than the destination orbit. Calculating the $\Delta V$ of such a transfer is elementary, as it requires only application of Equation~\eqref{Vis-Viva Equation}. Using Equation~\eqref{Time since periapsis}, the transfer time can be evaluated.
 
 \bigskip\bigskip
 \subsection{Bi-Elliptic Transfer}
@@ -253,9 +253,9 @@ A bi-elliptic transfer is another means of transferring from one circular orbit 
     \caption{A bi-elliptic transfer from a low orbit to a high orbit (left)}\label{fig:Bielliptic Transfer}
 \end{figure}
 
-Figure \ref{fig:Bielliptic Transfer} shows a satellite undergoing a bi-elliptic transfer. It begins in one orbit (blue) at some radius $r_1$, then performs a burn to enter a high transfer orbit with apoapsis $r_t>r_1,r_2$. It then performs a small burn to either raise or lower its periapsis to the destination orbit altitude. Finally, at periapsis, it slows down to lower its apoapsis into a circular orbit. Equation \eqref{Vis-Viva Equation} allows this orbit to be analyzed easily much like was done in Section \ref{sec:Hohmann Transfer}.
+Figure~\ref{fig:Bielliptic Transfer} shows a satellite undergoing a bi-elliptic transfer. It begins in one orbit (blue) at some radius $r_1$, then performs a burn to enter a high transfer orbit with apoapsis $r_t>r_1,r_2$. It then performs a small burn to either raise or lower its periapsis to the destination orbit altitude. Finally, at periapsis, it slows down to lower its apoapsis into a circular orbit. Equation~\eqref{Vis-Viva Equation} allows this orbit to be analyzed easily much like was done in Section~\ref{sec:Hohmann Transfer}.
 
-$a_1=r_1=\st{r}{pe,tr}$ is the origin orbit radius, and $a_2=r_2=\st{r}{ap,tr}$ is the destination orbit radius. The semi-major axis of the transfer orbits are $\st{a}{tr1}=\frac{1}{2}(r_1+r_t)$ and $\st{a}{tr2}=\frac{1}{2}(r_2+r_t)$. $v_1$ and $v_2$ refer to the circular orbit velocities in the original and new orbit. Transfer 1 refers to the first transfer orbit (purple in Figure \ref{fig:Bielliptic Transfer}), while transfer 2 refers to the second (red in the same figure).
+$a_1=r_1=\st{r}{pe,tr}$ is the origin orbit radius, and $a_2=r_2=\st{r}{ap,tr}$ is the destination orbit radius. The semi-major axis of the transfer orbits are $\st{a}{tr1}=\frac{1}{2}(r_1+r_t)$ and $\st{a}{tr2}=\frac{1}{2}(r_2+r_t)$. $v_1$ and $v_2$ refer to the circular orbit velocities in the original and new orbit. Transfer 1 refers to the first transfer orbit (purple in Figure~\ref{fig:Bielliptic Transfer}), while transfer 2 refers to the second (red in the same figure).
 
 \begin{align*}
     \Delta V &= \Delta v_1+\Delta v_2+\Delta v_3 \\
@@ -288,9 +288,9 @@ This equation is valid for all $r_1, r_2, r_t$ that obey $r_t\geq r_1,r_2$
     \Delta V = \sqrt{\frac{2\mu r_t}{r_1(r_1+r_t)}}+\sqrt{\frac{2\mu r_t}{r_2(r_2+r_t)}}-\sqrt{\frac{\mu}{r_1}}-\sqrt{\frac{\mu}{r_2}}+\left|\sqrt{\frac{2\mu r_2}{r_t(r_2+r_t)}}-\sqrt{\frac{2\mu r_1}{r_t(r_1+r_t)}}\right|
 \end{equation}
 
-Much like \eqref{Hohmann Delta V}, this equation is the same if $r_1$ and $r_2$ are swapped. This shows that the $\Delta V$ for a bi-elliptic transfer does not depend on which orbit is the origin orbit and which is the destination.
+Much like~\eqref{Hohmann Delta V}, this equation is the same if $r_1$ and $r_2$ are swapped. This shows that the $\Delta V$ for a bi-elliptic transfer does not depend on which orbit is the origin orbit and which is the destination.
 
-The time it takes to complete this transfer can be calculated with Equation \eqref{Period Geometric} as the sum of the half-periods of both transfer orbits.
+The time it takes to complete this transfer can be calculated with Equation~\eqref{Period Geometric} as the sum of the half-periods of both transfer orbits.
 \begin{align*}
     t &=\frac{\st{T}{tr1}}{2}+\frac{\st{T}{tr2}}{2} \\
  &=\frac{1}{2}\left(\sqrt{\frac{4\pi^2 \st{a}{tr1}^3}{\mu}}+\sqrt{\frac{4\pi^2 \st{a}{tr2}^3}{\mu}}\right) \\
@@ -303,7 +303,7 @@ The time it takes to complete this transfer can be calculated with Equation \eqr
 
 \subsubsection{\texorpdfstring{$\Delta V$}{DeltaV} Analysis for Bi-Elliptic Transfers}\label{sec:DeltaV Analsysis for bi-elliptic}
 
-Just as was done in \ref{sec:DeltaV analysis for Hohmann} before, Equation \eqref{Bi-elliptic Delta V} will be rewritten. $\st{r}{low}$ and $\st{r}{high}$ will be introduced with $\alpha=\st{r}{high}/\st{r}{low}$. When $r_1$ of \eqref{Bi-elliptic Delta V} is taken to be $\st{r}{low}$ and $r_2$ to be $\st{r}{high}$ (recalling that the $\Delta V$ does not depend on which orbit is the origin and which is the destination), the absolute value's argument will be positive and as such the absolute value can be removed.
+Just as was done in Section~\ref{sec:DeltaV analysis for Hohmann} before, Equation~\eqref{Bi-elliptic Delta V} will be rewritten. $\st{r}{low}$ and $\st{r}{high}$ will be introduced with $\alpha=\st{r}{high}/\st{r}{low}$. When $r_1$ of~\eqref{Bi-elliptic Delta V} is taken to be $\st{r}{low}$ and $r_2$ to be $\st{r}{high}$ (recalling that the $\Delta V$ does not depend on which orbit is the origin and which is the destination), the absolute value's argument will be positive and as such the absolute value can be removed.
 
 \begin{align*}
     \Delta V &= \sqrt{\frac{2\mu r_t}{\st{r}{low}(\st{r}{low}+r_t)}}+\sqrt{\frac{2\mu r_t}{\st{r}{high}(\st{r}{high}+r_t)}}-\sqrt{\frac{\mu}{\st{r}{low}}}-\sqrt{\frac{\mu}{\st{r}{high}}}+\sqrt{\frac{2\mu \st{r}{high}}{r_t(\st{r}{high}+r_t)}}-\sqrt{\frac{2\mu \st{r}{low}}{r_t(\st{r}{low}+r_t)}}\\
@@ -345,9 +345,9 @@ A bi-parabolic transfer has $\Delta V$
 
 With mathematic analyses completed of both Hohmann and bi-elliptic transfers, the two can be compared to determine when each is more efficient in terms of time and in terms of $\Delta V$ expenditure.
 
-First, transfer times will be analyzed. Equations \eqref{Hohmann time} and \eqref{Bielliptic time} that the transfers have a transfer time of
+First, transfer times will be analyzed. Equations~\eqref{Hohmann time} and~\eqref{Bielliptic time} that the transfers have a transfer time of
 
-$$\st{t}{Hohmann}=\frac{\pi}{\sqrt{8\mu}}(r_1+r_2)^{3/2}\qquad\text{and}\qquad \st{t}{Bi-Elliptic}=\frac{\pi}{\sqrt{8\mu}}\left((r_1+r_t)^{3/2}+(r_2+r_t)^{3/2}\right)$$
+\[\st{t}{Hohmann}=\frac{\pi}{\sqrt{8\mu}}(r_1+r_2)^{3/2}\qquad\text{and}\qquad \st{t}{Bi-Elliptic}=\frac{\pi}{\sqrt{8\mu}}\left((r_1+r_t)^{3/2}+(r_2+r_t)^{3/2}\right)\]
 
 It is clear that the bi-elliptic transfer takes substantially longer than the Hohmann transfer, taking at best almost twice as long (as for a Hohmann transfer, only 180 degrees of the orbit must be traversed, whereas the bi-elliptic transfer requires 360 degrees to be traversed). If the bi-elliptic transfer is allowed to approach a bi-parabolic transfer, then the transfer time approaches infinity.
 
@@ -358,7 +358,7 @@ We will begin by finding the first and second derivatives of $\Delta V$ for both
 
 %TODO: DERIVATIVES
 
-\eqref{Bielliptic DV derivative} is always decreasing. In other words, so long as \eqref{Bielliptic DV derivative} is ever negative, the most efficient transfer will occur at the largest $\beta$. If the derivative is never negative, it means increasing $\beta$ will only increase $\Delta V$, and that minimizing $\beta$ to the case of $\beta=\alpha$ (a Hohmann transfer) will be the most efficient case. This means that if a bi-elliptic transfer has any use case, it is necessary that increasing the altitude of the transfer orbit will increase the efficiency of the maneuver.
+\eqref{Bielliptic DV derivative} is always decreasing. In other words, so long as~\eqref{Bielliptic DV derivative} is ever negative, the most efficient transfer will occur at the largest $\beta$. If the derivative is never negative, it means increasing $\beta$ will only increase $\Delta V$, and that minimizing $\beta$ to the case of $\beta=\alpha$ (a Hohmann transfer) will be the most efficient case. This means that if a bi-elliptic transfer has any use case, it is necessary that increasing the altitude of the transfer orbit will increase the efficiency of the maneuver.
 
 % TODO
 
@@ -379,7 +379,7 @@ We will look for two cases. First, the value of $\alpha$ at which for all $\beta
 \end{align*}
 
 This is not factorable. While there is a formula much like the quadratic formula that can solve cubics, it is a very long and unwieldy formula. Instead, this will be solved numerically. The single positive root of this cubic is
-$$\alpha=15.58172\dots$$
+\[\alpha=15.58172\dots\]
 
 Beyond this $\alpha$, a bi-elliptic transfer is \textit{always} more efficient than a Hohmann transfer, regardless of the transfer orbit apoapsis, and with the $\Delta V$ decreasing as $\beta$ increases. However, this is not the only time that a bi-elliptic transfer requires less $\Delta V$ than its simpler counterpart.
 \end{comment}
@@ -404,7 +404,7 @@ We will subtract the Hohmann transfer $\Delta V$ from the bi-elliptic transfer o
     \sqrt{\frac{1}{\beta(1+\beta)}}+\sqrt{\frac{\alpha}{1+\alpha}}+\sqrt{\frac{2}{\alpha}}=\sqrt{\frac{\beta}{\alpha(\alpha+\beta)}}+\sqrt{\frac{\alpha}{\beta(\alpha+\beta)}}+\sqrt{\frac{\beta}{1+\beta}}+\sqrt{\frac{1}{\alpha(1+\alpha)}}
 \end{equation}
 
-Analyzing Equation \eqref{Bi-Elliptic DeltaV in terms of alpha, beta, r1}, it can be seen that at any $\alpha$, $\Delta V$ increases with $\beta$ up to some point, and then decreases with increase in $\beta$. This means that if a bi-elliptic transfer is as efficient as a Hohmann transfer at some $\beta>\alpha$, then it will be more efficient for \textit{all} $\beta$ above that $\beta$. By allowing $\beta$ to approach infinity for the limiting case of a bi-parabolic transfer, the minimum $\alpha$ can be found such that it satisfies Equation \eqref{Equality for Efficiency}.
+Analyzing Equation~\eqref{Bi-Elliptic DeltaV in terms of alpha, beta, r1}, it can be seen that at any $\alpha$, $\Delta V$ increases with $\beta$ up to some point, and then decreases with increase in $\beta$. This means that if a bi-elliptic transfer is as efficient as a Hohmann transfer at some $\beta>\alpha$, then it will be more efficient for \textit{all} $\beta$ above that $\beta$. By allowing $\beta$ to approach infinity for the limiting case of a bi-parabolic transfer, the minimum $\alpha$ can be found such that it satisfies Equation~\eqref{Equality for Efficiency}.
 
 \begin{align*}
     \lim_{\beta\rightarrow\infty}\sqrt{\frac{1}{\beta(1+\beta)}}+\sqrt{\frac{\alpha}{1+\alpha}}+\sqrt{\frac{2}{\alpha}} &=\lim_{\beta\rightarrow\infty}\sqrt{\frac{\beta}{1+\beta}}+\lim_{\beta\rightarrow\infty}\sqrt{\frac{\beta}{\alpha(\alpha+\beta)}}+\lim_{\beta\rightarrow\infty}\sqrt{\frac{\alpha}{\beta(\alpha+\beta)}}+\sqrt{\frac{1}{\alpha(1+\alpha)}} \\
@@ -415,11 +415,11 @@ Analyzing Equation \eqref{Bi-Elliptic DeltaV in terms of alpha, beta, r1}, it ca
 
 This is unfortunately not analytically solvable, but it can be solved with numerical methods. It yields
 
-$$\alpha\approx11.93876$$
+\[\alpha\approx11.93876\]
 
 For $\alpha\approx11.93876$, a bi-elliptic transfer requires $\beta=\infty$ to be as efficient as a Hohmann transfer. Therefore, for all $\alpha<11.93876$, a Hohmann transfer is more efficient than a bi-elliptic transfer.
 
-Recall that a bi-elliptic transfer becomes less efficient with increase in $\beta$ up to a point, and then becomes more efficient with increasing $\beta$. We will search for the case in which a bi-elliptic transfer is more efficient than a Hohmann transfer for all $\beta>\alpha$. Unfortunately setting $\beta$ equal to $\alpha$ and evaluating Equation \eqref{Equality for Efficiency} does not yield any helpful information, as equality is satisfied for all $\beta=\alpha$ in that equation (as when $\beta=\alpha$ the bi-elliptic transfer is a Hohmann transfer, so their $\Delta V$s must be the same). Instead, the bi-elliptic $\Delta V$ (Equation \eqref{Bi-Elliptic DeltaV in terms of alpha, beta, r1}) will be differentiated with respect to $\beta$, and then the derivative will be set to zero with $\alpha=\beta$. Any $\alpha$ which the derivative of $\Delta V$ with respect to $\beta$ at $\beta=\alpha$ is negative or zero will be indicative of the case where a bi-elliptic transfer is as efficient as a Hohmann transfer and becomes only more efficient with increase in $\beta$. Because of how unwieldy this equation is, fewer steps are shown than would be elsewhere.
+Recall that a bi-elliptic transfer becomes less efficient with increase in $\beta$ up to a point, and then becomes more efficient with increasing $\beta$. We will search for the case in which a bi-elliptic transfer is more efficient than a Hohmann transfer for all $\beta>\alpha$. Unfortunately setting $\beta$ equal to $\alpha$ and evaluating Equation~\eqref{Equality for Efficiency} does not yield any helpful information, as equality is satisfied for all $\beta=\alpha$ in that equation (as when $\beta=\alpha$ the bi-elliptic transfer is a Hohmann transfer, so their $\Delta V$s must be the same). Instead, the bi-elliptic $\Delta V$ (Equation~\eqref{Bi-Elliptic DeltaV in terms of alpha, beta, r1}) will be differentiated with respect to $\beta$, and then the derivative will be set to zero with $\alpha=\beta$. Any $\alpha$ which the derivative of $\Delta V$ with respect to $\beta$ at $\beta=\alpha$ is negative or zero will be indicative of the case where a bi-elliptic transfer is as efficient as a Hohmann transfer and becomes only more efficient with increase in $\beta$. Because of how unwieldy this equation is, fewer steps are shown than would be elsewhere.
 
 \begin{align*}
     \frac{\partial\Delta V}{\partial\beta}&= \frac{\partial}{\partial\beta}\sqrt{\frac{\mu}{\st{r}{low}}}\left(\sqrt{\frac{2\beta}{\alpha(\alpha+\beta)}}+\sqrt{\frac{2\alpha}{\beta(\alpha+\beta)}}+\sqrt{\frac{2\beta}{1+\beta}}-\sqrt{\frac{2}{\beta(1+\beta)}}-\sqrt{\frac{1}{\alpha}}-1\right) \\
@@ -443,7 +443,7 @@ We now apply the condition that $\alpha=\beta$
 \end{align*}
 
 This is not factorable. While there is a formula much like the quadratic formula that can solve cubics, it is a very long and unwieldy formula. Instead, this will be solved numerically. The single positive root of this cubic is
-$$\alpha=15.58172\dots$$
+\[\alpha=15.58172\dots\]
 
 At this $\alpha$, a bi-elliptic transfer's $\Delta V$ is always decreasing for $\beta\geq\alpha$ (which it always is; the transfer orbit apoapsis must be above both the origin and destination orbits). Beyond this $\alpha$, a bi-elliptic transfer is \textit{always} more efficient than a Hohmann transfer, regardless of the transfer orbit apoapsis.
 
@@ -466,7 +466,7 @@ Because the $\Delta V$ is the same between any two orbits, $\alpha$, defined as 
 \bigskip\bigskip
 \subsection{Combined Manuever}
 
-Any single-burn maneuver can be done most efficiently by burning such that $\Delta V$ takes the velocity from some original velocity $\vv{v}_1$ to some desired velocity $\vv{v}_2$. In all probability, the velocity vector of a satellite will be known by measurement. If instead the geometric parameters of the orbit are known, Equations \eqref{Vis-Viva Equation} and \eqref{Flight Path Angle} can be used to determine the velocity vector in the plane of the orbit. The desired velocity vector can be found with the same equations, and using basic trigonometry changes in inclination can be accounted for as well. For maneuvers in which the location of the ascending and descending nodes changes, some geometry must be applied. For any maneuver where the only change in inclination occurs at the ascending or descending node, the calculation is relatively simple. We will assume that the original velocity $v_1$ and the new velocity $v_2$ are both known, the change in flight path angle $\Delta \phi$ is known, and the angle between the old and new orbital planes $\Delta j$ is known. Using this, the total $\Delta V$ required can be calculated. The law of cosines can be used to simplify this calculation, however for ease of following it will not be used.
+Any single-burn maneuver can be done most efficiently by burning such that $\Delta V$ takes the velocity from some original velocity $\vv{v}_1$ to some desired velocity $\vv{v}_2$. In all probability, the velocity vector of a satellite will be known by measurement. If instead the geometric parameters of the orbit are known, Equations~\eqref{Vis-Viva Equation} and~\eqref{Flight Path Angle} can be used to determine the velocity vector in the plane of the orbit. The desired velocity vector can be found with the same equations, and using basic trigonometry changes in inclination can be accounted for as well. For maneuvers in which the location of the ascending and descending nodes changes, some geometry must be applied. For any maneuver where the only change in inclination occurs at the ascending or descending node, the calculation is relatively simple. We will assume that the original velocity $v_1$ and the new velocity $v_2$ are both known, the change in flight path angle $\Delta \phi$ is known, and the angle between the old and new orbital planes $\Delta j$ is known. Using this, the total $\Delta V$ required can be calculated. The law of cosines can be used to simplify this calculation, however for ease of following it will not be used.
 
 \begin{align*}
     \Delta V &= |\vv{v}_2-\vv{v}_1| \\
@@ -498,28 +498,28 @@ If instead the angle $\varPhi$ between the vectors is known, this simplifies to
 
 \bigskip
 To change the inclination of an orbit, a normal burn should be done at either the ascending or descending node. The $\Delta V$ required to change the inclination by a given amount is
-$$\Delta V=2\sin\left(\frac{\Delta i}{2}\right)$$
+\[\Delta V=2\sin\left(\frac{\Delta i}{2}\right)\]
 
 \bigskip
 To transfer between two circular orbits, the most simple trajectory is a Hohmann transfer, in which a satellite first enters a transfer orbit that is tangent to both the destination and origin orbits, and then circularizes at the destination orbit. If $\alpha$ describes the ratio of lower orbit to higher orbit and $\st{r}{low}$ is the lower orbit's radius, the $\Delta V$ required for a Hohmann transfer is
-$$\st{\Delta V}{Hohmann} = \sqrt{\frac{\mu}{\st{r}{low}}}\left(\sqrt{\frac{2\alpha}{1+\alpha}}+\sqrt{\frac{1}{\alpha}}-\sqrt{\frac{2}{\alpha(1+\alpha)}}-1\right)$$
+\[\st{\Delta V}{Hohmann} = \sqrt{\frac{\mu}{\st{r}{low}}}\left(\sqrt{\frac{2\alpha}{1+\alpha}}+\sqrt{\frac{1}{\alpha}}-\sqrt{\frac{2}{\alpha(1+\alpha)}}-1\right)\]
 
 Time time it takes for a Hohmann transfer is
-$$\st{t}{Hohmann}=\pi\sqrt{\frac{(r_1+r_2)^3}{8\mu}}$$
+\[\st{t}{Hohmann}=\pi\sqrt{\frac{(r_1+r_2)^3}{8\mu}}\]
 
 \bigskip
 A bi-elliptic transfer, much like a Hohmann transfer, transfers between two orbits with a ratio $\alpha=\st{r}{low}/\st{r}{high}$. A bi-elliptic transfer takes three burns, instead of the two that are needed for a Hohmann transfer. In a bi-elliptic transfer, the transfer orbit has an apoapsis above both the origin and destination orbits. If $\beta$ describes the ratio of this apoapsis to the lower orbit radius, then the $\Delta V$ required for a bi-elliptic transfer is
-$$\st{\Delta V}{Bi-Elliptic} = \sqrt{\frac{\mu}{\st{r}{low}}}\left(\sqrt{\frac{2\beta}{\alpha(\alpha+\beta)}}+\sqrt{\frac{2\alpha}{\beta(\alpha+\beta)}}+\sqrt{\frac{2\beta}{1+\beta}}-\sqrt{\frac{2}{\beta(1+\beta)}}-\sqrt{\frac{1}{\alpha}}-1\right)$$
+\[\st{\Delta V}{Bi-Elliptic} = \sqrt{\frac{\mu}{\st{r}{low}}}\left(\sqrt{\frac{2\beta}{\alpha(\alpha+\beta)}}+\sqrt{\frac{2\alpha}{\beta(\alpha+\beta)}}+\sqrt{\frac{2\beta}{1+\beta}}-\sqrt{\frac{2}{\beta(1+\beta)}}-\sqrt{\frac{1}{\alpha}}-1\right)\]
 
 with a longer transfer time of
-$$\st{t}{Bi-Elliptic}=\pi\left(\sqrt{\frac{(r_1+r_t)^3}{8\mu}}+\sqrt{\frac{(r_2+r_t)^3}{8\mu}}\right)$$
+\[\st{t}{Bi-Elliptic}=\pi\left(\sqrt{\frac{(r_1+r_t)^3}{8\mu}}+\sqrt{\frac{(r_2+r_t)^3}{8\mu}}\right)\]
 
 For all $\alpha<11.93876$, a Hohmann transfer is always more efficient than a bi-elliptic transfer. For all $\alpha>15.58172$, a bi-elliptic transfer is more efficient. For all $\alpha$ between these values, there exists a $\beta$ above which the bi-elliptic transfer is more efficient and below which the Hohmann transfer is more efficient.
 
 \bigskip
 
 For complex single-burn maneuvers in which both the beginning velocity vector and desired velocity vector are known, the $\Delta V$ required to complete the maneuver is
-$$\Delta V = \sqrt{v_1^2+v_2^2-2v_1v_2\cos(\Delta \phi)\cos(\Delta j)}$$
+\[\Delta V = \sqrt{v_1^2+v_2^2-2v_1v_2\cos(\Delta \phi)\cos(\Delta j)}\]
 
 
 \end{document}

@@ -38,13 +38,13 @@ First, conservation of energy will be applied. For mass to be conserved, $m_e=-d
     \st{p}{rocket,1}  & =\st{p}{rocket,2}+\st{p}{exhaust}                   \\
     mv                 & =(m+dm)(v+dv)+m_e(v-v_e)                              \\
     mv                 & =(m+dm)(v+dv)-dm(v-v_e)                               \\
-    mv                 & =mv+mdv+vdm+dmdv-vdm+v_edm                            \\
-    \cancel{mv}        & =\cancel{mv}+mdv+\cancel{vdm}+dmdv-\cancel{vdm}+v_edm \\
-    0                  & =mdv+dmdv+v_edm                                       \\
+    mv                 & =mv+mdv+vdm+dmdv-vdm+v_e dm                            \\
+    \cancel{mv}        & =\cancel{mv}+mdv+\cancel{vdm}+dmdv-\cancel{vdm}+v_e dm \\
+    0                  & =mdv+dmdv+v_e dm                                       \\
                        & \text{The second-order differential $dmdv$ vanishes}  \\
-    0                  & =mdv+v_edm                                            \\
-    -mdv               & =v_edm                                                \\
-    dv                 & =\frac{-v_edm}{m}                                     \\
+    0                  & =mdv+v_e dm                                            \\
+    -mdv               & =v_e dm                                                \\
+    dv                 & =\frac{-v_e dm}{m}                                     \\
     \int_{v_1}^{v_2}dv & =-v_e\int_{m_1}^{m_2}\frac{1}{m}dm                    \\
     \Delta{}v          & =-v_e(\ln(m_2)-\ln(m_1))                              \\
     \Delta{}v          & =-v_e\ln(\frac{m_2}{m_1})                             \\
@@ -54,7 +54,7 @@ First, conservation of energy will be applied. For mass to be conserved, $m_e=-d
     \Delta{}v=v_e\ln\left(\frac{m_1}{m_2}\right)
 \end{equation}
 
-This equation has another (equivalent) form. Because exhaust velocity can come in many different units, making it hard to compare between spacecraft. Instead of the exhaust velocity, a specific impulse $I_sp$ is defined. The specific impulse is the exhaust velocity divided by Earth's standard gravity at sea level. This allows the units to cancel out to seconds. $I_{sp}=\frac{v_e}{g_0}\rightarrow{}v_e=I_{sp}g_0$
+This equation has another (equivalent) form. Because exhaust velocity can come in many different units, making it hard to compare between spacecraft. Instead of the exhaust velocity, a specific impulse $I_{sp}$ is defined. The specific impulse is the exhaust velocity divided by Earth's standard gravity at sea level. This allows the units to cancel out to seconds. $I_{sp}=\frac{v_e}{g_0}\rightarrow{}v_e=I_{sp}g_0$
 
 \begin{equation}\label{Rocket Equation ISP}
     \Delta{}v=I_{sp}g_0\ln\left(\frac{m_1}{m_2}\right)
@@ -96,7 +96,7 @@ It can be shown that $v'=v$.
     v'     & = v                                                      \\
 \end{align*}
 
-This proves that, when $dV$ is always perpendicular to the velocity vector, there is no change in magnitude of velocity. Because the magnitude of velocity is conserved, Equation \eqref{Specific Energy Physical} implies that specific energy is conserved. Equation \eqref{Specific Energy Geometric} shows that the semi-major axis is also unchanged due to the conservation of specific energy.
+This proves that, when $dV$ is always perpendicular to the velocity vector, there is no change in magnitude of velocity. Because the magnitude of velocity is conserved, Equation~\eqref{Specific Energy Physical} implies that specific energy is conserved. Equation~\eqref{Specific Energy Geometric} shows that the semi-major axis is also unchanged due to the conservation of specific energy.
 
 However, the flight path angle $\phi$ does change. Remember throughout this process that $v$ is constant.
 
@@ -107,8 +107,8 @@ However, the flight path angle $\phi$ does change. Remember throughout this proc
     \Delta \phi            & = \frac{\Delta V}{v}            \\
 \end{align*}
 
-While the magnitude of velocity is not changed, its direction relative to the $u$ vectors (and any inertial base frame) is changed. Equation \eqref{Flight Path Angle} shows the relationship between $\phi$ and geometric parameters of the orbit.
-$$\cos(\phi)=\sqrt{\frac{a^2(1-e^2)}{r(2a-r)}}$$
+While the magnitude of velocity is not changed, its direction relative to the $u$ vectors (and any inertial base frame) is changed. Equation~\eqref{Flight Path Angle} shows the relationship between $\phi$ and geometric parameters of the orbit.
+\[\cos(\phi)=\sqrt{\frac{a^2(1-e^2)}{r(2a-r)}}\]
 
 Because $a$ and $r$ are unchanged, $e$ must change. The precise change in $e$ can be investigated by solving for $e_2$, the eccentricity of the orbit post-burn.
 
@@ -144,11 +144,11 @@ This formula is here for the sake of completeness, however in it is utterly usel
 Recall that $\phi$ is constrained $\frac{-\pi}{2}<\phi<\frac{\pi}{2}$ (at $\phi=\pm\frac{\pi}{2}$, $\hat{m}_r$ is undefined as there are infinitely many vectors normal to velocity and in plane with the displacement vector). Any thrust in the $\hat{m}_r$ direction will increase $\phi$.
 
 The following equation will be analyzed to determine how manuevers in $\hat{m}_r$ impact $e$.
-$$\cos(\phi)=\sqrt{\frac{a^2(1-e^2)}{r(2a-r)}}$$
+\[\cos(\phi)=\sqrt{\frac{a^2(1-e^2)}{r(2a-r)}}\]
 
 As $\phi$ increases within the domain $\frac{-\pi}{2}<\phi<0$, $\cos(\phi)$ increases, meaning that $1-e^2$ must increase as well, so $e$ must decrease. On the domain $0<\phi<\frac{\pi}{2}$, the opposite holds true; increase in $\phi$ means an increase in $e$. When $\phi$ is negative, the spacecraft's distance to the planet is decreasing. This means that the spacecraft is approaching periapsis. When $\phi$ is positive, the spacecraft is approaching apoapsis.
 
-From Equation \eqref{True Anomoly Geometric}, an increase in eccentricity will increase the angle to the periapsis, while a decrease in eccentricity will decrease the angle to periapsis.
+From Equation~\eqref{True Anomoly Geometric}, an increase in eccentricity will increase the angle to the periapsis, while a decrease in eccentricity will decrease the angle to periapsis.
 
 This means that if the spacecraft is heading towards periapsis, a radial out burn (by decreasing eccentricity) will bring the periapsis up and closer to the spacecraft's true anomaly. When the spacecraft is heading towards apoapsis, a radial out burn will (by increasing efficiency) further raise the apoapsis while increasing the angle to periapsis and therefore decreasing the angle to apoapsis.
 %TODO: UNCOMMENT
@@ -177,7 +177,7 @@ This means that if the spacecraft is heading towards periapsis, a radial out bur
 \end{figure}
 \end{comment}
 
-Conclusion: any burn in the $\hat{m}_r$ direction raises apsis that the spacecraft is approaching while lowering the apsis that the spacecraft is coming from. The orbit "pivots" about the spacecraft, with the eccentricity changing and the semi-major axis remaining the same. The increase in one apsis is equal to the decrease in the other apsis (see Figure \ref{fig:Orbit Diagram}). The true anomaly of whichever apsis the spacecraft is heading towards will be brought closer to the spacecraft. Because the plane of the orbit is unchanged, $\Omega$ and $i$ are kept the same with radial manuevers. To keep the spacecraft where it is, $\omega+\theta$ is also not changed.
+Conclusion: any burn in the $\hat{m}_r$ direction raises apsis that the spacecraft is approaching while lowering the apsis that the spacecraft is coming from. The orbit ``pivots'' about the spacecraft, with the eccentricity changing and the semi-major axis remaining the same. The increase in one apsis is equal to the decrease in the other apsis (see Figure~\ref{fig:Orbit Diagram}). The true anomaly of whichever apsis the spacecraft is heading towards will be brought closer to the spacecraft. Because the plane of the orbit is unchanged, $\Omega$ and $i$ are kept the same with radial manuevers. To keep the spacecraft where it is, $\omega+\theta$ is also not changed.
 
 Radial in burns are the reverse of radial out burns.
 
@@ -205,11 +205,11 @@ Radial in burns are the reverse of radial out burns.
     \caption{Velocity change due to thrust in the $\hat{m}_n$ direction}\label{fig:dV Triangle Mn}
 \end{figure}
 
-Much like in Section \ref{sec:Mr manuevers}, the magnitude of velocity does not change. Instead of $\phi$ changing, the inclination of the orbit changes. Note that instead of using $i$, $j$ is used here. This is because $\Delta V$ causes a linear change in the angle between the planes of the pre-burn and post-burn orbits. However, the inclination measures the angle between the post-burn orbit and some arbitrary horizon. $\Delta j$ is very easy to find, with $\Delta i$ requiring some geometric reasoning.
+Much like in Section~\ref{sec:Mr manuevers}, the magnitude of velocity does not change. Instead of $\phi$ changing, the inclination of the orbit changes. Note that instead of using $i$, $j$ is used here. This is because $\Delta V$ causes a linear change in the angle between the planes of the pre-burn and post-burn orbits. However, the inclination measures the angle between the post-burn orbit and some arbitrary horizon. $\Delta j$ is very easy to find, with $\Delta i$ requiring some geometric reasoning.
 
-Using the same mathematics as in Section \ref{sec:Mr manuevers}, it is apparent that $\Delta j=\frac{\Delta V}{v}$.
+Using the same mathematics as in Section~\ref{sec:Mr manuevers}, it is apparent that $\Delta j=\frac{\Delta V}{v}$.
 
-This means that normal burns have the effect of "tilting" the plane of the orbit about the line connecting the spacecraft and the orbited body. The two points at which the orbit intersects the reference plane are the ascending and descending nodes. At the ascending node, the spacecraft goes from negative latitude to positive latitude. At the descending node, it goes from positive latitude to negative latitude.
+This means that normal burns have the effect of ``tilting'' the plane of the orbit about the line connecting the spacecraft and the orbited body. The two points at which the orbit intersects the reference plane are the ascending and descending nodes. At the ascending node, the spacecraft goes from negative latitude to positive latitude. At the descending node, it goes from positive latitude to negative latitude.
 
 \begin{figure}[H]
     \centering
@@ -253,8 +253,8 @@ If the original orbit (red) is inclined by some angle $i$ in such a way that $i$
 
 It will now become useful to express inclination as a vector. A normal burn has the effect of adding another inclination vector to the original inclination vector. The inclination is a rotation of the orbit about a vector that points from the orbited body to the ascending node.
 
-The inclination can be expressed as a rotation of $i\hat{b}_1$ (see Appendix Figure \ref{fig:Frames}). A burn in the $\hat{m}_n$ direction will cause a rotation of $\Delta j\hat{u}_r$ vector. Therefore,
-$$i_2=|i\hat{b}_1+\Delta j\hat{u}_r|$$
+The inclination can be expressed as a rotation of $i\hat{b}_1$ (see Appendix Figure~\ref{fig:Frames}). A burn in the $\hat{m}_n$ direction will cause a rotation of $\Delta j\hat{u}_r$ vector. Therefore,
+\[i_2=|i\hat{b}_1+\Delta j\hat{u}_r|\]
 
 Conclusion: normal burns rotate the orbit about the polar $\hat{u}_r$ vector.
 
@@ -262,9 +262,9 @@ Conclusion: normal burns rotate the orbit about the polar $\hat{u}_r$ vector.
 \subsection{Burns in the \texorpdfstring{$\hat{m}_v$}{Velocity} Direction}
 
 Returning once more to the simple realm of in-plane orbits, a burn in the $\hat{m}_v$ direction carries the unique property that $\Delta V$ actually \textit{is} in the direction of velocity, meaning $\Delta V$ is equal to the change in magnitude of velocity and the magnitude of change in velocity. This means that
-$$v_2=v+\Delta v$$
+\[v_2=v+\Delta v\]
 
-Using Equation \eqref{Specific Energy Physical}, the change in specific energy can be found.
+Using Equation~\eqref{Specific Energy Physical}, the change in specific energy can be found.
 
 \begin{align*}
     \Delta \varepsilon & = \varepsilon_2 - \varepsilon                                                                        \\
@@ -277,7 +277,7 @@ Using Equation \eqref{Specific Energy Physical}, the change in specific energy c
 
 This means that, to maximize specific energy gained for any given $\Delta V$, a burn should be done when the spacecraft is at its maximum speed, which occurs at Periapsis.
 
-Because $\varepsilon$ changes, Equation \eqref{Specific Energy Geometric} implies that the semi-major axis changes as well.
+Because $\varepsilon$ changes, Equation~\eqref{Specific Energy Geometric} implies that the semi-major axis changes as well.
 
 \begin{align*}
     \varepsilon & = \frac{-\mu}{2a}           \\
@@ -295,7 +295,7 @@ The proportional change in $a$ will be found. That is to say, the ratio of $a_2$
                   & = 1+\frac{\Delta V\left(\Delta V+v\right)}{v^2-\frac{2\mu{}}{r}}                                               \\
 \end{align*}
 
-However, a more simple means of finding $\Delta a$ can be found using Equation \eqref{Vis-Viva Equation}.
+However, a more simple means of finding $\Delta a$ can be found using Equation~\eqref{Vis-Viva Equation}.
 
 \begin{align*}
     v + \Delta V                            & = \sqrt{\frac{2\mu}{r}-\frac{\mu}{a_2}}                        \\
@@ -315,7 +315,7 @@ Conclusion: burns in the $\hat{m}_v$ direction increase the semi-major axis of t
 
 \bigskip
 The rocket equation describes the change in velocity (or, more accurately, the magnitude of the vector change in velocity) due to the expenditure of propellant in a spacecraft. Because all maneuvers require changing velocity, this $\Delta V$ is treated as a means of measuring mission requirements, almost like a fuel requirement.
-$$\Delta V = I_{sp}g_0\ln\left(\frac{m_1}{m_2}\right)$$
+\[\Delta V = I_{sp}g_0\ln\left(\frac{m_1}{m_2}\right)\]
 
 \bigskip
 If a spacecraft burns radially outward (that is to say, perpendicular from and in plane with its velocity and generally away from the planet), this will have the effect of raising the next apsis and lowering the opposite one, while bringing the next apsis closer to the spacecraft's position. This will change the eccentricity of the orbit.
